@@ -1,0 +1,305 @@
+/* Thank You Content Styles */
+.thank-you-content {
+  background: white;
+  padding: 0px 20px;
+  min-height: 50vh;
+  margin-top: -50px;
+  position: relative;
+  z-index: 5;
+}
+
+.content-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Main Heading */
+.main-heading {
+  font-size: 28px;
+  font-weight: bold;
+  color: #1e40af;
+  text-align: center;
+  margin-bottom: 30px;
+  line-height: 1.3;
+  padding-top: 20px;
+}
+
+/* Content Body */
+.content-body {
+  text-align: left;
+}
+
+/* Intro Paragraph with Drop Cap */
+.intro-paragraph {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #1e40af;
+  margin-bottom: 25px;
+  position: relative;
+  padding-left: 50px;
+}
+
+.drop-cap {
+  font-size: 40px;
+  font-weight: bold;
+  color: #1e40af;
+  float: left;
+  margin-left: -50px;
+  margin-top: -5px;
+  line-height: 1;
+}
+
+/* Benefits Section */
+.benefits-section {
+  margin: 30px 0;
+}
+
+.benefits-heading {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1e40af;
+  margin-bottom: 15px;
+}
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.benefits-list li {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #1e40af;
+  margin-bottom: 12px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.benefits-list li::before {
+  content: "•";
+  color: #1e40af;
+  font-weight: bold;
+  font-size: 18px;
+  position: absolute;
+  left: 0;
+  top: -1px;
+}
+
+/* Conclusion Paragraph */
+.conclusion-paragraph {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #1e40af;
+  margin-top: 25px;
+}
+
+/* Responsive Design */
+@media (min-width: 480px) {
+  .thank-you-content {
+    margin-top: -60px;
+  }
+  
+  .main-heading {
+    font-size: 30px;
+    margin-bottom: 35px;
+  }
+  
+  .intro-paragraph {
+    font-size: 17px;
+    padding-left: 55px;
+  }
+  
+  .drop-cap {
+    font-size: 44px;
+    margin-left: -55px;
+  }
+  
+  .benefits-heading {
+    font-size: 19px;
+  }
+  
+  .benefits-list li {
+    font-size: 16px;
+  }
+  
+  .conclusion-paragraph {
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 768px) {
+  .thank-you-content {
+    padding: 0px 40px;
+    margin-top: -70px;
+  }
+  
+  .main-heading {
+    font-size: 32px;
+    margin-bottom: 40px;
+    padding-top: 25px;
+  }
+  
+  .intro-paragraph {
+    font-size: 18px;
+    padding-left: 60px;
+  }
+  
+  .drop-cap {
+    font-size: 48px;
+    margin-left: -60px;
+  }
+  
+  .benefits-heading {
+    font-size: 20px;
+  }
+  
+  .benefits-list li {
+    font-size: 17px;
+  }
+  
+  .conclusion-paragraph {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .thank-you-content {
+    padding: 0px 60px;
+    margin-top: -80px;
+  }
+  
+  .main-heading {
+    font-size: 36px;
+    margin-bottom: 50px;
+    padding-top: 30px;
+  }
+  
+  .intro-paragraph {
+    font-size: 20px;
+    padding-left: 70px;
+  }
+  
+  .drop-cap {
+    font-size: 56px;
+    margin-left: -70px;
+  }
+  
+  .benefits-heading {
+    font-size: 22px;
+  }
+  
+  .benefits-list li {
+    font-size: 18px;
+  }
+  
+  .conclusion-paragraph {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .thank-you-content {
+    padding: 0px 80px;
+    margin-top: -90px;
+  }
+  
+  .main-heading {
+    font-size: 40px;
+    margin-bottom: 60px;
+    padding-top: 35px;
+  }
+  
+  .intro-paragraph {
+    font-size: 22px;
+    padding-left: 80px;
+  }
+  
+  .drop-cap {
+    font-size: 64px;
+    margin-left: -80px;
+  }
+  
+  .benefits-heading {
+    font-size: 24px;
+  }
+  
+  .benefits-list li {
+    font-size: 20px;
+  }
+  
+  .conclusion-paragraph {
+    font-size: 22px;
+  }
+}
+
+/* Mobile Landscape */
+@media (max-width: 767px) and (orientation: landscape) {
+  .thank-you-content {
+    margin-top: -40px;
+  }
+  
+  .main-heading {
+    font-size: 26px;
+    margin-bottom: 25px;
+    padding-top: 15px;
+  }
+  
+  .intro-paragraph {
+    font-size: 15px;
+    padding-left: 45px;
+  }
+  
+  .drop-cap {
+    font-size: 36px;
+    margin-left: -45px;
+  }
+  
+  .benefits-heading {
+    font-size: 17px;
+  }
+  
+  .benefits-list li {
+    font-size: 14px;
+  }
+  
+  .conclusion-paragraph {
+    font-size: 15px;
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 375px) {
+  .thank-you-content {
+    margin-top: -45px;
+    padding: 0px 15px;
+  }
+  
+  .main-heading {
+    font-size: 24px;
+    margin-bottom: 25px;
+    padding-top: 15px;
+  }
+  
+  .intro-paragraph {
+    font-size: 14px;
+    padding-left: 40px;
+  }
+  
+  .drop-cap {
+    font-size: 32px;
+    margin-left: -40px;
+  }
+  
+  .benefits-heading {
+    font-size: 16px;
+  }
+  
+  .benefits-list li {
+    font-size: 13px;
+  }
+  
+  .conclusion-paragraph {
+    font-size: 14px;
+  }
+} 
