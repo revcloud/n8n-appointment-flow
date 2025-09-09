@@ -1,27 +1,30 @@
 /* Thank You Content Styles */
 .thank-you-content {
   background: white;
-  padding: 0px 20px;
-  min-height: 50vh;
-  margin-top: -50px;
   position: relative;
-  z-index: 5;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
 
 .content-container {
   max-width: 800px;
   margin: 0 auto;
+  width: 50% !important;
+  box-sizing: border-box;
 }
 
 /* Main Heading */
 .main-heading {
+   width: 100%;
   font-size: 28px;
   font-weight: bold;
-  color: #1e40af;
+  color: #273653;
   text-align: center;
   margin-bottom: 30px;
   line-height: 1.3;
   padding-top: 20px;
+  margin-top: 0;
 }
 
 /* Content Body */
@@ -33,7 +36,7 @@
 .intro-paragraph {
   font-size: 16px;
   line-height: 1.6;
-  color: #1e40af;
+  color: #273653;
   margin-bottom: 25px;
   position: relative;
   padding-left: 50px;
@@ -42,7 +45,7 @@
 .drop-cap {
   font-size: 40px;
   font-weight: bold;
-  color: #1e40af;
+  color: #273653;
   float: left;
   margin-left: -50px;
   margin-top: -5px;
@@ -51,13 +54,13 @@
 
 /* Benefits Section */
 .benefits-section {
-  margin: 30px 0;
+  margin: 30px 0 20px 0;
 }
 
 .benefits-heading {
   font-size: 18px;
   font-weight: bold;
-  color: #1e40af;
+  color: #273653;
   margin-bottom: 15px;
 }
 
@@ -70,7 +73,7 @@
 .benefits-list li {
   font-size: 15px;
   line-height: 1.5;
-  color: #1e40af;
+  color: #273653;
   margin-bottom: 12px;
   padding-left: 20px;
   position: relative;
@@ -78,7 +81,7 @@
 
 .benefits-list li::before {
   content: "•";
-  color: #1e40af;
+  color: #273653;
   font-weight: bold;
   font-size: 18px;
   position: absolute;
@@ -90,8 +93,87 @@
 .conclusion-paragraph {
   font-size: 16px;
   line-height: 1.6;
-  color: #1e40af;
-  margin-top: 25px;
+  color: #273653;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+/* Background Section */
+.background-section {
+  margin-top: 40px;
+  padding-top: 30px;
+  /* border-top: 1px solid #e5e7eb; */
+}
+
+.background-heading {
+  font-size: 20px;
+  font-weight: bold;
+  color: #273653;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.background-paragraph {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #273653;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.background-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+/* Cash Buyers Section */
+.cash-buyers-section {
+  margin-top: 40px;
+  padding-top: 30px;
+}
+
+.cash-buyers-heading {
+  font-size: 20px;
+  font-weight: bold;
+  color: #273653;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.cash-buyers-paragraph {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #273653;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.cash-buyers-paragraph:last-child {
+  margin-bottom: 25px;
+}
+
+/* Numbered Section */
+.numbered-section {
+  margin-top: 20px;
+}
+
+.numbered-heading {
+  font-size: 18px;
+  font-weight: bold;
+  color: #273653;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.numbered-paragraph {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #273653;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.numbered-paragraph:last-child {
+  margin-bottom: 0;
 }
 
 /* Responsive Design */
@@ -124,6 +206,30 @@
   }
   
   .conclusion-paragraph {
+    font-size: 17px;
+  }
+  
+  .background-heading {
+    font-size: 21px;
+  }
+  
+  .background-paragraph {
+    font-size: 17px;
+  }
+  
+  .cash-buyers-heading {
+    font-size: 21px;
+  }
+  
+  .cash-buyers-paragraph {
+    font-size: 17px;
+  }
+  
+  .numbered-heading {
+    font-size: 19px;
+  }
+  
+  .numbered-paragraph {
     font-size: 17px;
   }
 }
@@ -161,6 +267,30 @@
   .conclusion-paragraph {
     font-size: 18px;
   }
+  
+  .background-heading {
+    font-size: 22px;
+  }
+  
+  .background-paragraph {
+    font-size: 18px;
+  }
+  
+  .cash-buyers-heading {
+    font-size: 22px;
+  }
+  
+  .cash-buyers-paragraph {
+    font-size: 18px;
+  }
+  
+  .numbered-heading {
+    font-size: 20px;
+  }
+  
+  .numbered-paragraph {
+    font-size: 18px;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -194,6 +324,30 @@
   }
   
   .conclusion-paragraph {
+    font-size: 20px;
+  }
+  
+  .background-heading {
+    font-size: 24px;
+  }
+  
+  .background-paragraph {
+    font-size: 20px;
+  }
+  
+  .cash-buyers-heading {
+    font-size: 24px;
+  }
+  
+  .cash-buyers-paragraph {
+    font-size: 20px;
+  }
+  
+  .numbered-heading {
+    font-size: 22px;
+  }
+  
+  .numbered-paragraph {
     font-size: 20px;
   }
 }
@@ -231,6 +385,30 @@
   .conclusion-paragraph {
     font-size: 22px;
   }
+  
+  .background-heading {
+    font-size: 26px;
+  }
+  
+  .background-paragraph {
+    font-size: 22px;
+  }
+  
+  .cash-buyers-heading {
+    font-size: 26px;
+  }
+  
+  .cash-buyers-paragraph {
+    font-size: 22px;
+  }
+  
+  .numbered-heading {
+    font-size: 24px;
+  }
+  
+  .numbered-paragraph {
+    font-size: 22px;
+  }
 }
 
 /* Mobile Landscape */
@@ -266,6 +444,30 @@
   .conclusion-paragraph {
     font-size: 15px;
   }
+  
+  .background-heading {
+    font-size: 18px;
+  }
+  
+  .background-paragraph {
+    font-size: 15px;
+  }
+  
+  .cash-buyers-heading {
+    font-size: 18px;
+  }
+  
+  .cash-buyers-paragraph {
+    font-size: 15px;
+  }
+  
+  .numbered-heading {
+    font-size: 17px;
+  }
+  
+  .numbered-paragraph {
+    font-size: 15px;
+  }
 }
 
 /* Extra Small Mobile */
@@ -273,17 +475,24 @@
   .thank-you-content {
     margin-top: -45px;
     padding: 0px 15px;
+    width: 100%;
+  }
+  
+  .content-container {
+    padding: 0 5px;
   }
   
   .main-heading {
     font-size: 24px;
     margin-bottom: 25px;
     padding-top: 15px;
+    line-height: 1.2;
   }
   
   .intro-paragraph {
     font-size: 14px;
     padding-left: 40px;
+    line-height: 1.5;
   }
   
   .drop-cap {
@@ -297,9 +506,101 @@
   
   .benefits-list li {
     font-size: 13px;
+    line-height: 1.4;
   }
   
   .conclusion-paragraph {
     font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  .background-heading {
+    font-size: 17px;
+  }
+  
+  .background-paragraph {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  .cash-buyers-heading {
+    font-size: 17px;
+  }
+  
+  .cash-buyers-paragraph {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  .numbered-heading {
+    font-size: 16px;
+  }
+  
+  .numbered-paragraph {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+/* Very Small Mobile */
+@media (max-width: 320px) {
+  .thank-you-content {
+    padding: 0px 10px;
+  }
+  
+  .content-container {
+    padding: 0 2px;
+  }
+  
+  .main-heading {
+    font-size: 22px;
+    margin-bottom: 20px;
+    padding-top: 10px;
+  }
+  
+  .intro-paragraph {
+    font-size: 13px;
+    padding-left: 35px;
+  }
+  
+  .drop-cap {
+    font-size: 28px;
+    margin-left: -35px;
+  }
+  
+  .benefits-heading {
+    font-size: 15px;
+  }
+  
+  .benefits-list li {
+    font-size: 12px;
+  }
+  
+  .conclusion-paragraph {
+    font-size: 13px;
+  }
+  
+  .background-heading {
+    font-size: 16px;
+  }
+  
+  .background-paragraph {
+    font-size: 13px;
+  }
+  
+  .cash-buyers-heading {
+    font-size: 16px;
+  }
+  
+  .cash-buyers-paragraph {
+    font-size: 13px;
+  }
+  
+  .numbered-heading {
+    font-size: 15px;
+  }
+  
+  .numbered-paragraph {
+    font-size: 13px;
   }
 } 
