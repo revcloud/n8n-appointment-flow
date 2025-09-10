@@ -213,6 +213,22 @@
   padding: 16px;
   margin-bottom: 12px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* <-- shadow here */
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.option-card:hover {
+  border-color: #bec6d0 !important;
+}
+
+.option-card.selected {
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+}
+
+.option-card.selected .option-title,
+.option-card.selected .option-subtitle {
+  color: white !important;
 }
 
 .option-card:last-child {
@@ -388,6 +404,10 @@
 @media (max-width: 768px) {
   .modal-overlay {
     padding: 16px;
+  }
+.close-button {
+    top: 5px;
+    right: -5px;
   }
   
   .modal-container {

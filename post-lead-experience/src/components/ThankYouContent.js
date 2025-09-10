@@ -10,15 +10,18 @@ const ThankYouContent = () => {
         </h1>
 
         <div className="content-body">
-          <p className="intro-paragraph">
-            <span className="drop-cap">T</span>rusted Home Reports is now reaching out to their network of hundreds of qualified cash buyers and investors to get you top offer on your home. They have helped thousands of homeowners who've felt this is the best way to sell their home quickly, and stress free.
-          </p>
+       <p className="intro-paragraph">
+  <span className="drop-cap">T</span>
+  rusted Home Reports is now reaching out to their network of hundreds of qualified cash buyers and investors 
+  to get you top offer on your home. They have helped thousands of homeowners who've felt this is the best way 
+  to sell their home quickly, and stress free.
+</p>
 
           <div className="benefits-section">
             <h2 className="benefits-heading">
               Benefits of working with Trusted Home Offers:
             </h2>
-            <ul className="benefits-list">
+            <ul className="benefit-list">
               <li>Tap the largest cash buyer network in the US, including iBuyers and long-term investors.</li>
               <li>They handle all the buyer-side costs and paperwork.</li>
               <li>Get all cash offers.</li>
@@ -191,7 +194,7 @@ const ThankYouContent = () => {
             Contingencies run rampant in house contracts. Contingencies are “back out” clauses that do a lot to protect buyers but are onerous for sellers. The fine print might say something like:
             </p>
             <p className="numbered-paragraph">
-              <ul>
+              <ul className="benefit-list">
                 <li>Offer is only valid if the buyer’s current home sells within three months.</li>
                 <li>Offer is only good if the inspection doesn’t turn up a cracked foundation.</li>
                 <li>Even if the bank has approved it, the offer is only valid if the mortgage lender comes through.</li>
@@ -308,7 +311,7 @@ const ThankYouContent = () => {
             <p className="numbered-paragraph">
             Just like your relationship status on Facebook… it’s complicated — but you’ll likely have better luck if you know your options.
             </p>
-             <p className="numbered-paragraph">
+             <p className="numbere-paragraph">
            Header Image Source: (Will Porada/ Unsplash)
             </p>
              <p className="numbered-paragraph">

@@ -59,7 +59,10 @@ const OfferModal = ({ isOpen, onClose }) => {
               {/* Modal Content */}
               <div className="modal-content">
           {/* Fast Offer Section */}
-          <div className="option-card">
+          <div 
+            className={`option-card ${selectedOption === 'home' ? 'selected' : ''}`}
+            onClick={() => setSelectedOption('home')}
+          >
             <div className="option-content">
               <HomeFilled className="house-icon"/>
               <div className="option-text">

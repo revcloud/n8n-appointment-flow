@@ -1,30 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
 /* Thank You Content Styles */
 .thank-you-content {
+  margin-top: 40px;
   background: white;
   position: relative;
   width: 100%;
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Open Sans' !important;
 }
 
 .content-container {
   max-width: 800px;
   margin: 0 auto;
   width: 50% !important;
-  box-sizing: border-box;
+  box-sizing: border-box; 
 }
 
 /* Main Heading */
 .main-heading {
-   width: 100%;
+  width: 100%;
   font-size: 28px;
-  font-weight: bold;
-  color: #273653;
-  text-align: center;
+  font-weight: 700 !important;
+  color: #000000;
+  text-align: left;
   margin-bottom: 30px;
   line-height: 1.3;
-  padding-top: 20px;
-  margin-top: 0;
+  margin-top: -30px;
 }
 
 /* Content Body */
@@ -32,56 +34,52 @@
   text-align: left;
 }
 
-/* Intro Paragraph with Drop Cap */
 .intro-paragraph {
   font-size: 16px;
   line-height: 1.6;
-  color: #273653;
-  margin-bottom: 25px;
-  position: relative;
-  padding-left: 50px;
+  color: #000000;
 }
 
+/* Drop Cap */
 .drop-cap {
-  font-size: 40px;
-  font-weight: bold;
-  color: #273653;
   float: left;
-  margin-left: -50px;
-  margin-top: -5px;
-  line-height: 1;
+  font-size: 50px;       /* large letter */
+  line-height: 0.9;      /* keep height tight */
+  font-weight: bold;
+  margin-right: 8px;     /* space between letter and content */
+  margin-top: 4px;       /* aligns better with text on desktop */
+  color: #000000;
 }
-
 /* Benefits Section */
 .benefits-section {
   margin: 30px 0 20px 0;
 }
 
 .benefits-heading {
-  font-size: 18px;
+  font-size: 28px !important;
   font-weight: bold;
-  color: #273653;
+  color: #000000;
   margin-bottom: 15px;
 }
 
-.benefits-list {
+.benefit-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.benefits-list li {
-  font-size: 15px;
+.benefit-list li {
+  font-size: 18px !important;
   line-height: 1.5;
-  color: #273653;
+  color: #000000;
   margin-bottom: 12px;
   padding-left: 20px;
   position: relative;
 }
 
-.benefits-list li::before {
+.benefit-list li::before {
   content: "•";
-  color: #273653;
+    color: #000000;
   font-weight: bold;
   font-size: 18px;
   position: absolute;
@@ -93,7 +91,7 @@
 .conclusion-paragraph {
   font-size: 16px;
   line-height: 1.6;
-  color: #273653;
+    color: #000000;
   margin-top: 20px;
   margin-bottom: 0;
 }
@@ -101,14 +99,14 @@
 /* Background Section */
 .background-section {
   margin-top: 40px;
-  padding-top: 30px;
+  padding-top: 0px;
   /* border-top: 1px solid #e5e7eb; */
 }
 
 .background-heading {
-  font-size: 20px;
+  font-size: 28px !important;
   font-weight: bold;
-  color: #273653;
+  color: #000000;
   margin-bottom: 20px;
   text-align: left;
 }
@@ -116,7 +114,7 @@
 .background-paragraph {
   font-size: 16px;
   line-height: 1.6;
-  color: #273653;
+    color: #000000;
   margin-bottom: 20px;
   text-align: left;
 }
@@ -128,13 +126,13 @@
 /* Cash Buyers Section */
 .cash-buyers-section {
   margin-top: 40px;
-  padding-top: 30px;
+  padding-top: 0px;
 }
 
 .cash-buyers-heading {
-  font-size: 20px;
+  font-size: 28px !important;
   font-weight: bold;
-  color: #273653;
+  color: #000000;
   margin-bottom: 20px;
   text-align: left;
 }
@@ -142,7 +140,7 @@
 .cash-buyers-paragraph {
   font-size: 16px;
   line-height: 1.6;
-  color: #273653;
+  color: #000000;
   margin-bottom: 20px;
   text-align: left;
 }
@@ -159,7 +157,7 @@
 .numbered-heading {
   font-size: 18px;
   font-weight: bold;
-  color: #273653;
+    color: #000000;
   margin-bottom: 15px;
   text-align: left;
 }
@@ -167,440 +165,223 @@
 .numbered-paragraph {
   font-size: 16px;
   line-height: 1.6;
-  color: #273653;
+  color: #000000;
   margin-bottom: 15px;
   text-align: left;
+}
+
+.numbere-paragraph {
+  font-size: 20px !important;
+  line-height: 1.6;
+  color: #000000;
+  margin-bottom: 15px;
+  text-align: left;
+  font-style: italic;
 }
 
 .numbered-paragraph:last-child {
   margin-bottom: 0;
 }
 
-/* Responsive Design */
-@media (min-width: 480px) {
+/* Mobile Responsive Design */
+/* Small Mobile - Under 480px */
+@media (max-width: 479px) {
   .thank-you-content {
-    margin-top: -60px;
-  }
-  
-  .main-heading {
-    font-size: 30px;
-    margin-bottom: 35px;
-  }
-  
-  .intro-paragraph {
-    font-size: 17px;
-    padding-left: 55px;
-  }
-  
-  .drop-cap {
-    font-size: 44px;
-    margin-left: -55px;
-  }
-  
-  .benefits-heading {
-    font-size: 19px;
-  }
-  
-  .benefits-list li {
-    font-size: 16px;
-  }
-  
-  .conclusion-paragraph {
-    font-size: 17px;
-  }
-  
-  .background-heading {
-    font-size: 21px;
-  }
-  
-  .background-paragraph {
-    font-size: 17px;
-  }
-  
-  .cash-buyers-heading {
-    font-size: 21px;
-  }
-  
-  .cash-buyers-paragraph {
-    font-size: 17px;
-  }
-  
-  .numbered-heading {
-    font-size: 19px;
-  }
-  
-  .numbered-paragraph {
-    font-size: 17px;
-  }
-}
-
-@media (min-width: 768px) {
-  .thank-you-content {
-    padding: 0px 40px;
-    margin-top: -70px;
-  }
-  
-  .main-heading {
-    font-size: 32px;
-    margin-bottom: 40px;
-    padding-top: 25px;
-  }
-  
-  .intro-paragraph {
-    font-size: 18px;
-    padding-left: 60px;
-  }
-  
-  .drop-cap {
-    font-size: 48px;
-    margin-left: -60px;
-  }
-  
-  .benefits-heading {
-    font-size: 20px;
-  }
-  
-  .benefits-list li {
-    font-size: 17px;
-  }
-  
-  .conclusion-paragraph {
-    font-size: 18px;
-  }
-  
-  .background-heading {
-    font-size: 22px;
-  }
-  
-  .background-paragraph {
-    font-size: 18px;
-  }
-  
-  .cash-buyers-heading {
-    font-size: 22px;
-  }
-  
-  .cash-buyers-paragraph {
-    font-size: 18px;
-  }
-  
-  .numbered-heading {
-    font-size: 20px;
-  }
-  
-  .numbered-paragraph {
-    font-size: 18px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .thank-you-content {
-    padding: 0px 60px;
-    margin-top: -80px;
-  }
-  
-  .main-heading {
-    font-size: 36px;
-    margin-bottom: 50px;
-    padding-top: 30px;
-  }
-  
-  .intro-paragraph {
-    font-size: 20px;
-    padding-left: 70px;
-  }
-  
-  .drop-cap {
-    font-size: 56px;
-    margin-left: -70px;
-  }
-  
-  .benefits-heading {
-    font-size: 22px;
-  }
-  
-  .benefits-list li {
-    font-size: 18px;
-  }
-  
-  .conclusion-paragraph {
-    font-size: 20px;
-  }
-  
-  .background-heading {
-    font-size: 24px;
-  }
-  
-  .background-paragraph {
-    font-size: 20px;
-  }
-  
-  .cash-buyers-heading {
-    font-size: 24px;
-  }
-  
-  .cash-buyers-paragraph {
-    font-size: 20px;
-  }
-  
-  .numbered-heading {
-    font-size: 22px;
-  }
-  
-  .numbered-paragraph {
-    font-size: 20px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .thank-you-content {
-    padding: 0px 80px;
-    margin-top: -90px;
-  }
-  
-  .main-heading {
-    font-size: 40px;
-    margin-bottom: 60px;
-    padding-top: 35px;
-  }
-  
-  .intro-paragraph {
-    font-size: 22px;
-    padding-left: 80px;
-  }
-  
-  .drop-cap {
-    font-size: 64px;
-    margin-left: -80px;
-  }
-  
-  .benefits-heading {
-    font-size: 24px;
-  }
-  
-  .benefits-list li {
-    font-size: 20px;
-  }
-  
-  .conclusion-paragraph {
-    font-size: 22px;
-  }
-  
-  .background-heading {
-    font-size: 26px;
-  }
-  
-  .background-paragraph {
-    font-size: 22px;
-  }
-  
-  .cash-buyers-heading {
-    font-size: 26px;
-  }
-  
-  .cash-buyers-paragraph {
-    font-size: 22px;
-  }
-  
-  .numbered-heading {
-    font-size: 24px;
-  }
-  
-  .numbered-paragraph {
-    font-size: 22px;
-  }
-}
-
-/* Mobile Landscape */
-@media (max-width: 767px) and (orientation: landscape) {
-  .thank-you-content {
-    margin-top: -40px;
-  }
-  
-  .main-heading {
-    font-size: 26px;
-    margin-bottom: 25px;
-    padding-top: 15px;
-  }
-  
-  .intro-paragraph {
-    font-size: 15px;
-    padding-left: 45px;
-  }
-  
-  .drop-cap {
-    font-size: 36px;
-    margin-left: -45px;
-  }
-  
-  .benefits-heading {
-    font-size: 17px;
-  }
-  
-  .benefits-list li {
-    font-size: 14px;
-  }
-  
-  .conclusion-paragraph {
-    font-size: 15px;
-  }
-  
-  .background-heading {
-    font-size: 18px;
-  }
-  
-  .background-paragraph {
-    font-size: 15px;
-  }
-  
-  .cash-buyers-heading {
-    font-size: 18px;
-  }
-  
-  .cash-buyers-paragraph {
-    font-size: 15px;
-  }
-  
-  .numbered-heading {
-    font-size: 17px;
-  }
-  
-  .numbered-paragraph {
-    font-size: 15px;
-  }
-}
-
-/* Extra Small Mobile */
-@media (max-width: 375px) {
-  .thank-you-content {
-    margin-top: -45px;
-    padding: 0px 15px;
-    width: 100%;
+    /* margin-top: -50px; */
+    padding: 0 10px;
   }
   
   .content-container {
+    width: 100% !important;
+    max-width: 100%;
     padding: 0 5px;
   }
   
   .main-heading {
-    font-size: 24px;
+    font-size: 24px !important;
     margin-bottom: 25px;
-    padding-top: 15px;
-    line-height: 1.2;
+    margin-top: -20px;
   }
   
   .intro-paragraph {
     font-size: 14px;
-    padding-left: 40px;
-    line-height: 1.5;
   }
   
   .drop-cap {
-    font-size: 32px;
-    margin-left: -40px;
+    font-size: 36px;
+    line-height: 0.8;
   }
   
   .benefits-heading {
-    font-size: 16px;
+    font-size: 20px !important;
   }
   
-  .benefits-list li {
-    font-size: 13px;
-    line-height: 1.4;
+  .benefit-list li {
+    font-size: 14px !important;
   }
   
   .conclusion-paragraph {
     font-size: 14px;
-    line-height: 1.5;
   }
   
   .background-heading {
-    font-size: 17px;
+    font-size: 20px !important;
   }
   
   .background-paragraph {
     font-size: 14px;
-    line-height: 1.5;
   }
   
   .cash-buyers-heading {
-    font-size: 17px;
+    font-size: 20px !important;
   }
   
   .cash-buyers-paragraph {
     font-size: 14px;
-    line-height: 1.5;
   }
   
   .numbered-heading {
-    font-size: 16px;
+    font-size: 18px;
   }
   
   .numbered-paragraph {
     font-size: 14px;
-    line-height: 1.5;
+  }
+  
+  .numbere-paragraph {
+    font-size: 16px !important;
   }
 }
 
-/* Very Small Mobile */
-@media (max-width: 320px) {
+/* Mobile and Tablet - 480px to 767px */
+@media (min-width: 480px) and (max-width: 767px) {
   .thank-you-content {
-    padding: 0px 10px;
+    /* margin-top: -60px; */
+    padding: 0 15px;
   }
   
   .content-container {
-    padding: 0 2px;
+    width: 100% !important;
+    max-width: 100%;
+    padding: 0 5px;
   }
   
   .main-heading {
-    font-size: 22px;
-    margin-bottom: 20px;
-    padding-top: 10px;
+    font-size: 28px !important;
+    margin-bottom: 30px;
+    margin-top: -25px;
   }
   
   .intro-paragraph {
-    font-size: 13px;
-    padding-left: 35px;
+    font-size: 16px;
   }
   
   .drop-cap {
-    font-size: 28px;
-    margin-left: -35px;
+    font-size: 40px;
+    line-height: 0.8;
   }
   
   .benefits-heading {
-    font-size: 15px;
+    font-size: 24px !important;
   }
   
-  .benefits-list li {
-    font-size: 12px;
+  .benefit-list li {
+    font-size: 16px !important;
   }
   
   .conclusion-paragraph {
-    font-size: 13px;
+    font-size: 16px;
   }
   
   .background-heading {
-    font-size: 16px;
+    font-size: 24px !important;
   }
   
   .background-paragraph {
-    font-size: 13px;
-  }
-  
-  .cash-buyers-heading {
     font-size: 16px;
   }
   
+  .cash-buyers-heading {
+    font-size: 24px !important;
+  }
+  
   .cash-buyers-paragraph {
-    font-size: 13px;
+    font-size: 16px;
   }
   
   .numbered-heading {
-    font-size: 15px;
+    font-size: 20px;
   }
   
   .numbered-paragraph {
-    font-size: 13px;
+    font-size: 16px;
   }
-} 
+  
+  .numbere-paragraph {
+    font-size: 16px !important;
+  }
+}
+
+/* Desktop - 768px and above */
+@media (min-width: 768px) {
+  .thank-you-content {
+    padding: 0px 40px;
+    /* margin-top: -70px; */
+  }
+  
+  .main-heading {
+    font-size: 36px !important;
+    margin-bottom: 40px;
+    padding-top: 25px;
+    margin-top: -30px;
+  }
+  
+  .intro-paragraph {
+    font-size: 20px;
+  }
+  
+  .drop-cap {
+    font-size: 50px;
+    line-height: 0.8;
+  }
+  
+  .benefits-heading {
+    font-size: 28px !important;
+  }
+  
+  .benefit-list li {
+    font-size: 18px !important;
+  }
+  
+  .conclusion-paragraph {
+    font-size: 20px;
+  }
+  
+  .background-heading {
+    font-size: 28px !important;
+  }
+  
+  .background-paragraph {
+    font-size: 20px;
+  }
+  
+  .cash-buyers-heading {
+    font-size: 28px !important;
+  }
+  
+  .cash-buyers-paragraph {
+    font-size: 20px;
+  }
+  
+  .numbered-heading {
+    font-size: 24px;
+  }
+  
+  .numbered-paragraph {
+    font-size: 20px;
+  }
+  
+  .numbere-paragraph {
+    font-size: 20px !important;
+  }
+}

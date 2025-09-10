@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
 /* Hero Section Styles */
 .hero-section {
+  font-family: 'Open Sans' !important;
   position: relative;
   width: 100%;
   height: 400px;
@@ -10,12 +13,12 @@
 .hero-image-container {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 115% !important;
 }
 
 .hero-image {
   width: 100%;
-  height: 66%;
+  height: 80%;
   object-fit: cover;
   object-position: center;
   display: block;
@@ -24,7 +27,7 @@
 .hero-logo {
   width: 60px;
   height: 37px;
-  margin-left: -10px;
+  /* margin-left: -10px; */
   object-fit: contain;
   display: block;
 }
@@ -62,7 +65,32 @@
   white-space: nowrap;
 }
 
-/* Responsive Design */
+/* Mobile and Tablet Styles - Under 768px */
+@media (max-width: 767px) {
+  .hero-section {
+    height: 350px;
+  }
+  
+  .hero-logo {
+    width: 100px;
+  }
+  
+  .hero-content {
+    top: 15px;
+    left: 20px;
+  }
+  
+  .hero-brand {
+    gap: 8px;
+  }
+  
+  .brand-badge {
+    font-size: 11px;
+    padding: 6px 10px;
+  }
+}
+
+/* Desktop Styles - 768px and above */
 @media (min-width: 768px) {
   .hero-section {
     height: 500px;
@@ -84,75 +112,6 @@
   .brand-badge {
     font-size: 12px;
     padding: 7px 12px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .hero-section {
-    height: 600px;
-  }
-  
-  .hero-logo {
-    width: 200px;
-  }
-  
-  .hero-content {
-    top: 35px;
-    left: 40px;
-  }
-  
-  .hero-brand {
-    gap: 12px;
-  }
-  
-  .brand-badge {
-    font-size: 13px;
-    padding: 8px 14px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .hero-section {
-    height: 700px;
-  }
-  
-  .hero-logo {
-    width: 230px;
-  }
-  
-  .hero-content {
-    top: 40px;
-    left: 45px;
-  }
-  
-  .brand-badge {
-    font-size: 14px;
-    padding: 9px 16px;
-  }
-}
-
-/* Mobile Landscape */
-@media (max-width: 767px) and (orientation: landscape) {
-  .hero-section {
-    height: 300px;
-  }
-  
-  .hero-logo {
-    width: 120px;
-  }
-  
-  .hero-content {
-    top: 20px;
-    left: 25px;
-  }
-  
-  .hero-brand {
-    gap: 6px;
-  }
-  
-  .brand-badge {
-    font-size: 10px;
-    padding: 5px 8px;
   }
 }
 
