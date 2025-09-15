@@ -26,7 +26,7 @@
   text-align: left;
   margin-bottom: 30px;
   line-height: 1.3;
-  margin-top: -30px;
+  margin-top: -75px !important;
 }
 
 /* Content Body */
@@ -249,7 +249,7 @@
   }
   
   .numbere-paragraph {
-    font-size: 16px !important;
+    font-size: 14px !important;
   }
 }
 

@@ -17,8 +17,8 @@ const slots = [
 
 const AppointmentScreen = ({ onBack, onConfirm }) => {
   const [selected, setSelected] = useState({
-    weekdays: { afternoon: true, evening: true },
-    saturday: { evening: true },
+    weekdays: {},
+    saturday: {},
     sunday: {}
   });
   const [isFlexible, setIsFlexible] = useState(false);
@@ -35,12 +35,46 @@ const AppointmentScreen = ({ onBack, onConfirm }) => {
     }));
   };
 
+  // Format availability matrix
+  const formatAvailabilityMatrix = (selected) => {
+    const availability = {};
+    
+    const days = ['weekdays', 'saturday', 'sunday'];
+    const slots = ['morning', 'midday', 'afternoon', 'evening'];
+    
+    // Initialize all combinations
+    days.forEach(day => {
+      slots.forEach(slot => {
+        const key = `${day}_${slot}`;
+        availability[key] = false;
+      });
+    });
+    
+    // Set selected combinations
+    if (selected) {
+      Object.keys(selected).forEach(day => {
+        if (selected[day]) {
+          Object.keys(selected[day]).forEach(slot => {
+            if (selected[day][slot]) {
+              const key = `${day}_${slot}`;
+              availability[key] = true;
+            }
+          });
+        }
+      });
+    }
+    
+    return availability;
+  };
+
   const handleConfirm = () => {
+    const formattedAvailability = formatAvailabilityMatrix(selected);
+    
     const appointmentDetails = {
-      selected,
-      isFlexible,
+      availability: formattedAvailability,
+      is_flexible: isFlexible,
       message: message.trim(),
-      timezone,
+      time_zone: timezone,
     };
     
     if (onConfirm) {
@@ -65,7 +99,7 @@ const AppointmentScreen = ({ onBack, onConfirm }) => {
 
           <h2 className="modal-title">When are you usually free?</h2>
           <p className="modal-description">
-            We'll text or email you a specific time based on your general availability.
+            We'll coordinate with your selected agent to schedule a convenient time for your property evaluation. Select your preferred time slots and we'll confirm the exact appointment time.
           </p>
         </div>
 
@@ -122,7 +156,7 @@ const AppointmentScreen = ({ onBack, onConfirm }) => {
           <div className="instructions-container">
             <input
               className="instructions-input"
-              placeholder="Special instructions for the visit (Optional)"
+              placeholder="Special instructions (Optional)"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             />

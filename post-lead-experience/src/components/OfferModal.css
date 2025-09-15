@@ -139,7 +139,7 @@
   text-align: left;
   font-size: 13px;
   font-weight: 400;
-  color: #6b7280;
+  color: #6b7280 !important;
   margin: 0;
   line-height: 1.4;
   font-family: inherit;
@@ -222,13 +222,17 @@
 }
 
 .option-card.selected {
-  background-color: #3b82f6;
-  border-color: #3b82f6;
+  background-color: #0469BF;
+  border-color: #0469BF;
 }
 
 .option-card.selected .option-title,
 .option-card.selected .option-subtitle {
   color: white !important;
+}
+
+.option-card.selected .house-icon {
+  color: #0469BF !important;
 }
 
 .option-card:last-child {
@@ -267,7 +271,7 @@
   text-align: left;
   font-size: 14px !important;
   font-weight: 400 !important;
-  color: #65748B !important;
+  color: #6b7280 !important;
   margin: 0;
   line-height: 1.4;
 }
@@ -298,13 +302,17 @@
 }
 
 .contact-option.selected {
-  background-color: #3b82f6;
-  border-color: #3b82f6;
+  background-color: #0469BF;
+  border-color: #0469BF;
 }
 
 .contact-option.selected .option-name,
 .contact-option.selected .option-info {
   color: white !important;
+}
+
+.contact-option.selected .option-icon {
+  color: #0469BF !important;
 }
 
 .option-icon {
@@ -411,6 +419,7 @@
   }
   
   .modal-container {
+    margin-top: -10px;
     max-width: 100%;
     border-radius: 6px;
   }
@@ -608,10 +617,11 @@
     max-width: 100%;
     width: 100%;
     margin: 0;
+    margin-top: -10px;
   }
   
   .modal-inner-container {
-    padding: 16px 0px 16px 0px;
+    padding: 16px 0px 16px 50px;
   }
   
   /* Modal Header Mobile */

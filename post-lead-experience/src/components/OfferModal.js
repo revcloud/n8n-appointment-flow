@@ -2,14 +2,49 @@ import React, { useState, useEffect } from 'react';
 import { HomeFilled, PhoneFilled, VideoCameraFilled } from '@ant-design/icons';
 import './OfferModal.css';
 import AppointmentScreen from './AppointmentScreen';
+import { trackConsultationSelection, trackAppointmentDetails } from '../utils/trackingManager';
+import { sendPostLeadEvent } from '../utils/segmentEvents';
 
 const OfferModal = ({ isOpen, onClose }) => {
-  const [selectedOption, setSelectedOption] = useState(null);
+  const [selectedOption, setSelectedOption] = useState('phone');
   const [currentScreen, setCurrentScreen] = useState('offer'); // 'offer' or 'appointment'
+
+  // Format phone number to standard format
+  const formatPhoneNumber = (phone) => {
+    if (!phone) return '123-456-7890';
+    
+    // Remove all non-digit characters
+    const digits = phone.replace(/\D/g, '');
+    
+    // If 11 digits, ignore the first one (country code)
+    const phoneDigits = digits.length === 11 ? digits.slice(1) : digits;
+    
+    // Format as XXX-XXX-XXXX if we have 10 digits
+    if (phoneDigits.length === 10) {
+      return `${phoneDigits.slice(0, 3)}-${phoneDigits.slice(3, 6)}-${phoneDigits.slice(6)}`;
+    }
+    
+    // If already formatted or other format, return as is
+    return phone;
+  };
+
+  // Get dynamic values from URL parameters
+  const getUrlParams = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    return {
+      phone: formatPhoneNumber(urlParams.get('quiz_phone') || '123-456-7890'), // Formatted phone
+      email: urlParams.get('quiz_email') || 'user@revcloud.com', // Default email
+      address: urlParams.get('quiz_address') || '123 address', // Default address
+    };
+  };
+
+  const urlParams = getUrlParams();
 
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
+      // Track default phone selection when modal opens
+      trackConsultationSelection('phone_call');
     } else {
       document.body.style.overflow = 'unset';
     }
@@ -20,6 +55,9 @@ const OfferModal = ({ isOpen, onClose }) => {
   }, [isOpen]);
 
   const handleContinue = () => {
+    // Send post_lead event (1st button)
+    sendPostLeadEvent();
+    
     setCurrentScreen('appointment');
   };
 
@@ -28,7 +66,12 @@ const OfferModal = ({ isOpen, onClose }) => {
   };
 
   const handleAppointmentConfirm = (appointmentDetails) => {
-    console.log('Appointment details:', appointmentDetails);
+    // Track appointment details
+    trackAppointmentDetails(appointmentDetails);
+    
+    // Send post_lead event (2nd button)
+    sendPostLeadEvent();
+    
     // Handle appointment confirmation here
     onClose(); // Close modal after confirmation
   };
@@ -61,12 +104,15 @@ const OfferModal = ({ isOpen, onClose }) => {
           {/* Fast Offer Section */}
           <div 
             className={`option-card ${selectedOption === 'home' ? 'selected' : ''}`}
-            onClick={() => setSelectedOption('home')}
+            onClick={() => {
+              setSelectedOption('home');
+              trackConsultationSelection('in_person');
+            }}
           >
             <div className="option-content">
               <HomeFilled className="house-icon"/>
               <div className="option-text">
-                <h3 className="option-title">I want my best offer, fast. Let's meet at <strong>31931 Via De Linda</strong>.</h3>
+                <h3 className="option-title">I want my best offer, fast. Let's meet at <strong>{urlParams?.address}</strong>.</h3>
                 <p className="option-subtitle">Your onsite visits are required to get a verified offer.</p>
               </div>
             </div>
@@ -80,24 +126,30 @@ const OfferModal = ({ isOpen, onClose }) => {
               {/* Phone Call Option */}
               <div 
                 className={`contact-option ${selectedOption === 'phone' ? 'selected' : ''}`}
-                onClick={() => setSelectedOption('phone')}
+                onClick={() => {
+                  setSelectedOption('phone');
+                  trackConsultationSelection('phone_call');
+                }}
               >
                 <PhoneFilled className="option-icon"/>
                 <div className="option-details">
                   <h4 className="option-name">Phone Call</h4>
-                  <p className="option-info">We will call you at<br />415-555-1212</p>
+                  <p className="option-info">We will call you at<br />{urlParams?.phone}</p>
                 </div>
               </div>
 
               {/* Video Call Option */}
               <div 
                 className={`contact-option ${selectedOption === 'video' ? 'selected' : ''}`}
-                onClick={() => setSelectedOption('video')}
+                onClick={() => {
+                  setSelectedOption('video');
+                  trackConsultationSelection('video_call');
+                }}
               >
                 <VideoCameraFilled className="option-icon"/>
                 <div className="option-details">
                   <h4 className="option-name">Video Call (Zoom)</h4>
-                  <p className="option-info">We will send a zoom link to<br />w@revcloud.com</p>
+                  <p className="option-info">We will send a zoom link to<br />{urlParams?.email}</p>
                 </div>
               </div>
             </div>

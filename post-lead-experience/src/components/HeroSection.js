@@ -15,8 +15,8 @@ const HeroSection = () => {
       <div className="hero-content">
         <div className="hero-brand">
           <img
-            src="https://try.trustedhomereports.com/assets/trusted-home-reports-logo-white.png"
-            alt="Trusted Home Reports Logo"
+            src="https://try.trustedhomeoffers.org/assets/trusted-home-offers-asotv-white.png"
+            alt="Trusted Home Offers Logo"
             className="hero-logo"
           />
         </div>

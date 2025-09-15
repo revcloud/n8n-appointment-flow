@@ -95,11 +95,11 @@
 }
 
 .availability-table th {
-  padding: 10px 12px;
+  padding: 20px 20px;
   text-align: left !important;
   font-weight: 700 !important;
   /* color: #374151; */
-  font-size: 14px !important;
+  font-size: 15px !important;
   border-bottom: 1px solid #e5e7eb;
   color: #000000 !important;
 }
@@ -139,8 +139,8 @@
 }
 
 .custom-checkbox:checked {
-  background: #3b82f6;
-  border-color: #3b82f6; 
+  background: #0469BF;
+  border-color: #0469BF; 
 }
 
 .custom-checkbox:checked::after {
@@ -200,7 +200,7 @@
 }
 
 .toggle-input:checked + .toggle-slider {
-  background-color: #3b82f6;
+  background-color: #0469BF;
 }
 
 .toggle-input:checked + .toggle-slider:before {
@@ -238,7 +238,7 @@
 
 .instructions-input:focus {
   outline: none;
-  border-color: #3b82f6;
+  border-color: #0469BF;
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
@@ -290,7 +290,7 @@
 
 .timezone-select:focus {
   outline: none;
-  border-color: #3b82f6;
+  border-color: #0469BF;
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
@@ -380,13 +380,13 @@
   }
   
   .availability-table th {
-    padding: 8px 6px;
+    padding: 12px 12px;
     font-size: 12px !important;
     font-weight: 600 !important;
   }
   
   .availability-table td {
-    padding: 8px 6px;
+    padding: 10px 12px;
   }
   
   .slot-label {
@@ -506,12 +506,12 @@
   }
   
   .availability-table th {
-    padding: 6px 4px;
-    font-size: 11px !important;
+    padding: 12px 12px;
+    font-size: 12px !important;
   }
   
   .availability-table td {
-    padding: 6px 4px;
+    padding: 10px 12px;
   }
   
   .slot-label {

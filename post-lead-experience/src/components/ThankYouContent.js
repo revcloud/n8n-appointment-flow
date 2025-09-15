@@ -12,7 +12,7 @@ const ThankYouContent = () => {
         <div className="content-body">
        <p className="intro-paragraph">
   <span className="drop-cap">T</span>
-  rusted Home Reports is now reaching out to their network of hundreds of qualified cash buyers and investors 
+  rusted Home Offers is now reaching out to their network of hundreds of qualified cash buyers and investors 
   to get you top offer on your home. They have helped thousands of homeowners who've felt this is the best way 
   to sell their home quickly, and stress free.
 </p>
