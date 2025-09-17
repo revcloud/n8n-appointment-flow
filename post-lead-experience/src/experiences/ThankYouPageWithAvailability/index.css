@@ -1,0 +1,118 @@
+/* ThankYouPageWithAvailability Styles */
+.thank-you-page {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+/* Appointment Modal Overlay */
+.appointment-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.appointment-modal-container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  padding: 24px;
+}
+
+.appointment-placeholder {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.appointment-placeholder h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 16px;
+}
+
+.appointment-placeholder p {
+  font-size: 16px;
+  color: #6b7280;
+  margin-bottom: 24px;
+}
+
+.appointment-placeholder button {
+  background-color: #3b82f6;
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 0 8px;
+  transition: background-color 0.2s ease;
+}
+
+.appointment-placeholder button:hover {
+  background-color: #2563eb;
+}
+
+.appointment-placeholder button:last-child {
+  background-color: #6b7280;
+}
+
+.appointment-placeholder button:last-child:hover {
+  background-color: #4b5563;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .appointment-modal-overlay {
+    padding: 10px;
+  }
+  
+  .appointment-modal-container {
+    max-height: 95vh;
+    border-radius: 8px;
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .appointment-modal-overlay {
+    padding: 5px;
+  }
+  
+  .appointment-modal-container {
+    max-height: 98vh;
+    padding: 12px;
+  }
+  
+  .appointment-placeholder {
+    padding: 20px 10px;
+  }
+  
+  .appointment-placeholder h2 {
+    font-size: 20px;
+  }
+  
+  .appointment-placeholder p {
+    font-size: 14px;
+  }
+  
+  .appointment-placeholder button {
+    display: block;
+    width: 100%;
+    margin: 8px 0;
+  }
+}
