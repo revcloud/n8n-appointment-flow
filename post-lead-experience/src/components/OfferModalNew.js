@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { HomeFilled, PhoneFilled, VideoCameraFilled } from '@ant-design/icons';
 import './OfferModal.css';
-import AppointmentScreen from './AppointmentScreen';
+import AppointmentScreenNew from './AppointmentScreenNew';
 import { trackConsultationSelection, trackAppointmentDetails } from '../utils/trackingManager';
 import { sendPostLeadEvent } from '../utils/segmentEvents';
 
-const OfferModal = ({ isOpen, onClose }) => {
+const OfferModalNew = ({ isOpen, onClose }) => {
   const [selectedOption, setSelectedOption] = useState('phone');
   const [currentScreen, setCurrentScreen] = useState('appointment'); // 'appointment' or 'offer'
 
@@ -44,7 +44,7 @@ const OfferModal = ({ isOpen, onClose }) => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
       // Track default phone selection when modal opens
-      trackConsultationSelection('phone_call');
+      trackConsultationSelection('');
     } else {
       document.body.style.overflow = 'unset';
     }
@@ -55,25 +55,31 @@ const OfferModal = ({ isOpen, onClose }) => {
   }, [isOpen]);
 
   const handleContinue = () => {
-    // Send post_lead event (1st button)
+    // Set default appointment type to in_person if user didn't select anything
+    if (!selectedOption || selectedOption === 'phone') {
+      trackConsultationSelection('in_person');
+    }
+    
+    // Send post_lead event (2nd button)
     sendPostLeadEvent();
     
-    setCurrentScreen('appointment');
+    // Close modal after completing both screens
+    onClose();
   };
 
   const handleBackToOffer = () => {
-    setCurrentScreen('offer');
+    setCurrentScreen('appointment');
   };
 
   const handleAppointmentConfirm = (appointmentDetails) => {
     // Track appointment details
     trackAppointmentDetails(appointmentDetails);
     
-    // Send post_lead event (2nd button)
+    // Send post_lead event (1st button) - appointment_type: ""
     sendPostLeadEvent();
     
-    // Handle appointment confirmation here
-    onClose(); // Close modal after confirmation
+    // Switch to offer screen
+    setCurrentScreen('offer');
   };
 
   if (!isOpen) return null;
@@ -87,10 +93,21 @@ const OfferModal = ({ isOpen, onClose }) => {
             ×
           </button>
 
-          {currentScreen !== 'offer' ? (
+          {currentScreen === 'appointment' ? (
+            <AppointmentScreenNew 
+              onBack={handleBackToOffer}
+              onConfirm={handleAppointmentConfirm}
+            />
+          ) : (
             <>
               {/* Modal Header */}
               <div className="modal-header">
+                <div className="appointment-back">
+                  <button className="back-button" onClick={handleBackToOffer}>
+                    <span className="back-arrow">←</span>
+                    Back
+                  </button>
+                </div>
                 <h2 className="modal-title">
                   Avoids Delays or Adjustments Later, Faster Offer Turnaround
                 </h2>
@@ -175,15 +192,10 @@ const OfferModal = ({ isOpen, onClose }) => {
               {/* Continue Button */}
               <div className="modal-footer">
                 <button className="continue-button" onClick={handleContinue}>
-                  Continue
+                  Confirm
                 </button>
               </div>
             </>
-          ) : (
-            <AppointmentScreen 
-              onBack={handleBackToOffer}
-              onConfirm={handleAppointmentConfirm}
-            />
           )}
         </div>
       </div>
@@ -191,4 +203,4 @@ const OfferModal = ({ isOpen, onClose }) => {
   );
 };
 
-export default OfferModal;
+export default OfferModalNew;

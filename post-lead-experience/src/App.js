@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import ThankYouPage from './experiences/ThankYouPage';
+import ThankYouPageWithAvailabiltyAndType from './experiences/ThankYouPageWithAvailabiltyAndType';
 import ThankYouPageWithAvailability from './experiences/ThankYouPageWithAvailability';
 
 function App() {
@@ -10,6 +11,14 @@ function App() {
   
   // Render component based on experienceId using switch case
   switch (experienceId) {
+    case 3:
+    case '3':
+      return (
+        <div className="App">
+          <ThankYouPageWithAvailabiltyAndType />
+        </div>
+      );
+
     case 2:
     case '2':
       return (
