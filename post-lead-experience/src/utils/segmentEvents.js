@@ -8,6 +8,13 @@ export const sendPostLeadEvent = () => {
   const eventData = {
     appointment_type: segmentData.appointment_type || "",
     appointment_details: segmentData.appointment_details || "",
+    button_clicked: segmentData.button_clicked || "",
+    // Agent info (includes zip_code)
+    agent_info: segmentData.agent_info || { agent_name: "", agent_phone: "", zip_code: "" },
+    // n8n properties
+    n8n_flow_triggered: segmentData.n8n_flow_triggered || "No",
+    n8n_api_res: segmentData.n8n_api_res || "",
+    n8n_msg_received: segmentData.n8n_msg_received || "No",
     // Quiz properties
     quiz_name: segmentData.quiz_name || "",
     quiz_email: segmentData.quiz_email || "",

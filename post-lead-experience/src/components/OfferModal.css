@@ -60,6 +60,37 @@
   background-color: #f3f4f6;
 }
 
+/* Back Button */
+.appointment-back {
+  margin-bottom: 16px;
+}
+
+.back-button {
+  background: none !important;
+  border: none !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #374151;
+  font-family: inherit;
+  padding: 0;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.back-button:hover {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.back-arrow {
+  font-size: 16px;
+  font-weight: bold;
+}
+
 /* Modal Header */
 .modal-header {
   padding: 20px 20px 16px 20px;
@@ -90,119 +121,6 @@
 
 /* Use same header styles as OfferModal */
 
-/* Option Cards */
-.option-card {
-  background: white;
-  border: 1px solid #e5e7eb;
-  border-radius: 6px;
-  padding: 16px;
-  margin-bottom: 12px;
-}
-
-
-/* Fast Offer Section */
-.option-content {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  text-align: left;
-}
-
-.house-icon {
-  font-size: 20px;
-  margin-top: 2px;
-  width: 32px;
-  height: 32px;
-  background: #f3f4f6;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.option-text {
-  flex: 1;
-}
-
-.option-title {
-  text-align: left;
-  font-size: 16px;
-  font-weight: 700;
-  color: #374151;
-  margin: 0 0 6px 0;
-  line-height: 1.4;
-  font-family: inherit;
-}
-
-.option-subtitle {
-  text-align: left;
-  font-size: 13px;
-  font-weight: 400;
-  color: #6b7280 !important;
-  margin: 0;
-  line-height: 1.4;
-  font-family: inherit;
-}
-
-/* Contact Options */
-.contact-options {
-  display: flex;
-  gap: 12px;
-  margin-top: 16px;
-  text-align: left;
-}
-
-.contact-option {
-  flex: 1;
-  border: 1px solid #e5e7eb;
-  border-radius: 6px;
-  padding: 12px;
-  cursor: pointer;
-  transition: all 0.2s;
-  background-color: #f9fafb;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.contact-option:hover {
-  border-color: #3b82f6;
-}
-
-.option-icon {
-  font-size: 20px;
-  width: 32px;
-  height: 32px;
-  background: #e5e7eb;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.option-details {
-  flex: 1;
-}
-
-.option-name {
-  font-size: 14px;
-  font-weight: 700;
-  color: #374151;
-  margin: 0 0 3px 0;
-  line-height: 1.3;
-  font-family: inherit;
-}
-
-.option-info {
-  font-size: 12px;
-  font-weight: 400;
-  color: #6b7280;
-  margin: 0;
-  line-height: 1.3;
-  font-family: inherit;
-}
 
 
 /* Option Cards */
@@ -250,8 +168,20 @@
 }
 
 .house-icon {
-  font-size: 20px;
+  font-size: 20px !important;
   margin-top: 2px;
+  width: 32px !important;
+  height: 32px !important;
+  background: #f3f4f6 !important;
+  border-radius: 6px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+  color: #374151 !important;
+  border: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
 }
 
 .option-text {
@@ -317,6 +247,15 @@
 
 .option-icon {
   font-size: 20px;
+  width: 32px;
+  height: 32px;
+  background: #e5e7eb;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #374151;
 }
 
 .option-details {
@@ -408,204 +347,6 @@
   background-color: #ea580c;
 }
 
-/* Mobile Responsive Design */
-@media (max-width: 768px) {
-  .modal-overlay {
-    padding: 16px;
-  }
-.close-button {
-    top: 5px;
-    right: -5px;
-  }
-  
-  .modal-container {
-    margin-top: -10px;
-    max-width: 100%;
-    border-radius: 6px;
-  }
-  
-  .modal-header {
-    padding: 16px 16px 12px 16px;
-  }
-  
-  .modal-title {
-    font-size: 18px;
-  }
-  
-  .modal-description {
-    font-size: 13px;
-  }
-  
-  .modal-content {
-    padding: 10px 16px !important;
-  }
-  
-  .option-card {
-    padding: 12px;
-    margin-bottom: 10px;
-  }
-  
-  .option-title {
-    font-size: 14px;
-  }
-  
-  .option-subtitle {
-    font-size: 12px;
-  }
-  
-  .contact-options {
-    flex-direction: column;
-    gap: 8px;
-  }
-  
-  .contact-option {
-    padding: 10px;
-  }
-  
-  .option-name {
-    font-size: 13px;
-  }
-  
-  .option-info {
-    font-size: 11px;
-  }
-  
-  .benefits-list li {
-    font-size: 13px;
-    margin-bottom: 5px;
-  }
-  
-  .modal-footer {
-    padding: 10px 16px 16px 16px;
-  }
-  
-  .continue-button {
-    padding: 12px 16px;
-    font-size: 13px;
-  }
-}
-
-@media (max-width: 480px) {
-  .modal-overlay {
-    padding: 12px;
-  }
-  
-  .modal-header {
-    padding: 14px 14px 10px 14px;
-  }
-  
-  .modal-title {
-    font-size: 18px;
-  }
-  
-  .modal-description {
-    font-size: 13px;
-  }
-  
-   .modal-content {
-    padding: 10px 16px !important;
-  }
-  
-  .option-card {
-    padding: 12px;
-    margin-bottom: 10px;
-  }
-  
-  .option-title {
-    font-size: 15px;
-  }
-  
-  .option-subtitle {
-    font-size: 12px;
-  }
-  
-  .contact-option {
-    padding: 10px;
-  }
-  
-  .option-name {
-    font-size: 13px;
-  }
-  
-  .option-info {
-    font-size: 12px;
-  }
-  
-  .benefits-list li {
-    font-size: 13px;
-    margin-bottom: 5px;
-  }
-  
-  .modal-footer {
-    padding: 8px 14px 14px 14px;
-  }
-  
-  .continue-button {
-    padding: 12px 16px;
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 375px) {
-  .modal-overlay {
-    padding: 8px;
-  }
-  
-  .modal-header {
-    padding: 24px 12px 8px 12px;
-  }
-  
-  .modal-title {
-    font-size: 17px;
-  }
-  
-  .modal-description {
-    font-size: 12px;
-  }
-  
-   .modal-content {
-    padding: 10px 16px !important;
-  }
-  
-  .option-card {
-    padding: 10px;
-    margin-bottom: 8px;
-  }
-  
-  .option-title {
-    font-size: 14px;
-  }
-  
-  .option-subtitle {
-    font-size: 11px;
-  }
-  
-  .contact-option {
-    padding: 8px;
-  }
-  
-  .option-name {
-    font-size: 12px;
-  }
-  
-  .option-info {
-    font-size: 11px;
-  }
-  
-  .benefits-list li {
-    font-size: 12px;
-    margin-bottom: 4px;
-  }
-  
-  .modal-footer {
-    padding: 8px 14px 14px 14px;
-  }
-  
-  .continue-button {
-    padding: 10px 14px;
-    font-size: 13px;
-  }
-}
 
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
@@ -640,6 +381,29 @@
     line-height: 1.4;
   }
   
+  .appointment-back {
+    margin-bottom: 12px;
+    margin-top: -20px;
+  }
+  
+  .back-button {
+    font-size: 14px !important;
+    padding: 8px 0px !important;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  
+  .back-button:hover {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  
+  .back-arrow {
+    font-size: 14px !important;
+  }
+  
   /* Modal Content Mobile */
   .modal-content {
     padding: 0 20px;
@@ -656,9 +420,14 @@
   }
   
   .house-icon {
-    width: 28px;
-    height: 28px;
-    font-size: 18px;
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 18px !important;
+    background: #f3f4f6 !important;
+    border-radius: 6px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
   
   .option-title {
@@ -686,6 +455,7 @@
     width: 28px;
     height: 28px;
     font-size: 18px;
+    color: #374151;
   }
   
   .option-name {
@@ -763,9 +533,14 @@
   }
   
   .house-icon {
-    width: 24px;
-    height: 24px;
-    font-size: 16px;
+    width: 24px !important;
+    height: 24px !important;
+    font-size: 16px !important;
+    background: #f3f4f6 !important;
+    border-radius: 6px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
   
   .option-title {
@@ -789,6 +564,7 @@
     width: 24px;
     height: 24px;
     font-size: 16px;
+    color: #374151;
   }
   
   .option-name {
@@ -824,41 +600,3 @@
   }
 }
 
-/* Large Mobile Devices */
-@media (min-width: 481px) and (max-width: 768px) {
-  .modal-title {
-    font-size: 19px !important;
-  }
-  
-  .modal-description {
-    font-size: 14px !important;
-  }
-  
-  .option-title {
-    font-size: 16px !important;
-  }
-  
-  .option-subtitle {
-    font-size: 13px !important;
-  }
-  
-  .option-name {
-    font-size: 14px !important;
-  }
-  
-  .option-info {
-    font-size: 12px !important;
-  }
-  
-  .benefits-list li {
-    font-size: 14px !important;
-  }
-  
-  .continue-button {
-    font-size: 14px !important;
-  }
-  
-  .confirmation-text {
-    font-size: 13px !important;
-  }
-}

@@ -1,0 +1,671 @@
+/* Call Me Now Modal Styles */
+
+/* Modal Overlay */
+.call-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+/* Modal Container */
+.call-modal-container {
+  background: white;
+  border-radius: 16px;
+  width: 700px;
+  height: 720px;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.call-modal-inner-container {
+  position: relative;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Close Button */
+.call-close-button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #666;
+  cursor: pointer;
+  z-index: 10;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.call-close-button:hover {
+  background-color: #f5f5f5;
+}
+
+/* Back Button */
+.call-back-button {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #666;
+  cursor: pointer;
+  z-index: 10;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.call-back-button:hover {
+  background-color: #f5f5f5;
+}
+
+/* Screen Styles - All screens use same base */
+.call-screen-one,
+.call-screen-two {
+  padding: 15px 30px 30px;
+  text-align: left;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.call-header {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-start;
+  flex-shrink: 0;
+}
+
+/* Privacy Shield */
+.privacy-sheildDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.privacy-sheildBtn {
+  align-content: center !important;
+  width: 180px !important;
+  height: 32px !important;
+  padding-left: 15px;
+  color: white !important;
+  margin-left: 10px !important;
+  background-color: #592ff3 !important;
+  border-color: #592ff3 !important;
+  font-weight: 14px !important;
+  border-radius: 6px;
+}
+
+.privacy-sheildBtn:hover {
+  background-color: #592ff3 !important;
+  background: #592ff3 !important;
+}
+
+.user-avatar {
+  display: flex;
+  width: 34px;
+  height: 34px;
+  margin: 10px 0;
+}
+
+/* Content Styles */
+.call-content {
+  display: flex;
+  flex-direction: column;
+  /* align-items: flex-start; */
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.ringing-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.call-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.call-description {
+  font-size: 16px;
+  margin: 0;
+  line-height: 1.6;
+  max-width: 580px;
+}
+
+.call-subtitle {
+  font-size: 16px;
+  color: #666;
+  margin: 0;
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* Illustrations */
+.call-illustration {
+  position: relative;
+  width: 200px;
+  height: 320px;
+  margin: 50px auto 40px auto;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.house-icon1 {
+  font-size: 80px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.money-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.money-elements span {
+  position: absolute;
+  font-size: 24px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.money-elements .dollar:nth-child(1) {
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.money-elements .coin:nth-child(2) {
+  top: 20%;
+  right: 15%;
+  animation-delay: 0.5s;
+}
+
+.money-elements .dollar:nth-child(3) {
+  bottom: 20%;
+  left: 20%;
+  animation-delay: 1s;
+}
+
+.money-elements .coin:nth-child(4) {
+  bottom: 10%;
+  right: 10%;
+  animation-delay: 1.5s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.ringing-illustration {
+  position: relative;
+  width: 200px;
+  height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  margin: 50px auto 40px auto;
+}
+
+.phone-icon {
+  font-size: 100px;
+  z-index: 2;
+  position: relative;
+}
+
+.ringing-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ring-wave {
+  position: absolute;
+  border: 3px solid #4CAF50;
+  border-radius: 50%;
+  opacity: 0;
+  animation: ringPulse 2s infinite;
+}
+
+.ring-wave-1 {
+  width: 120px;
+  height: 120px;
+  top: -60px;
+  left: -60px;
+  animation-delay: 0s;
+}
+
+.ring-wave-2 {
+  width: 160px;
+  height: 160px;
+  top: -80px;
+  left: -80px;
+  animation-delay: 0.5s;
+}
+
+.ring-wave-3 {
+  width: 200px;
+  height: 200px;
+  top: -100px;
+  left: -100px;
+  animation-delay: 1s;
+}
+
+@keyframes ringPulse {
+  0% {
+    opacity: 1;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+}
+
+/* Buttons */
+.call-now-button {
+  background: #FFBA2A;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 28px;
+  color: #1a1a1a;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 186, 42, 0.3);
+  width: 100%;
+  justify-content: center;
+  align-self: stretch;
+  margin: 12px 0;
+}
+
+.call-now-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 186, 42, 0.4);
+}
+
+.call-now-button:active {
+  transform: translateY(0);
+}
+
+.call-icon {
+  font-size: 20px;
+}
+
+.call-text {
+  font-weight: 700;
+}
+
+.back-button1 {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px 24px;
+  color: #666;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  align-self: center;
+}
+
+.back-button1:hover {
+  background: #e9e9e9;
+  border-color: #ccc;
+}
+
+.back-arrow {
+  font-size: 18px;
+}
+
+/* New Button Styles for Screen 4 */
+.change-number-button {
+  background: #FFBA2A;
+  border: none;
+  border-radius: 12px;
+  padding: 16px 32px;
+  color: #1a1a1a;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 186, 42, 0.3);
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.change-number-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 186, 42, 0.4);
+}
+
+.call-again-button {
+  background: white;
+  border: 2px solid #FFBA2A;
+  border-radius: 12px;
+  padding: 16px 32px;
+  color: #1a1a1a;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.call-again-button:hover {
+  background: #FFBA2A;
+  transform: translateY(-2px);
+}
+
+.cant-talk-link {
+  font-size: 16px;
+  color: #666;
+  margin: 0;
+  cursor: pointer;
+  text-decoration: underline;
+  text-align: center !important;
+}
+
+.cant-talk-link:hover {
+  color: #333;
+}
+
+/* Phone Input Styles */
+.phone-input-container {
+  width: 100%;
+  margin: 15px 0;
+  align-self: center;
+}
+
+.phone-input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  font-size: 16px;
+  color: #1a1a1a;
+  background: white;
+  transition: border-color 0.3s ease;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.phone-input:focus {
+  outline: none;
+  border-color: #FFBA2A;
+}
+
+.cant-talk-button {
+  background: white;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  color: #666;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 12px 0;
+  padding: 14px 28px;
+  width: 100%;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.cant-talk-button:hover {
+  color: #333;
+  border-color: #ccc;
+  background: #f9f9f9;
+}
+
+/* Spacer for button positioning */
+.spacer-for-buttons {
+  height: 320px;
+  width: 100%;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  .call-modal-overlay {
+    padding: 10px;
+  }
+  
+  .call-modal-container {
+    width: 500px;
+    height: 720px;
+    max-width: 95vw;
+    border-radius: 12px;
+  }
+  
+  .call-screen-one,
+  .call-screen-two {
+    padding: 12px 20px 20px;
+  }
+  
+  .call-title {
+    font-size: 24px;
+    line-height: 1.1;
+  }
+  
+  .call-description {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  .call-subtitle {
+    font-size: 15px;
+    text-align: center;
+    color: #666;
+  }
+  
+  .call-illustration,
+  .ringing-illustration {
+    width: 160px;
+    height: 240px;
+  }
+  
+  .house-icon1 {
+    font-size: 60px;
+  }
+  
+  .phone-icon {
+    font-size: 80px;
+  }
+  
+  .call-now-button {
+    padding: 16px 28px;
+    font-size: 16px;
+  }
+  
+  .change-number-button {
+    padding: 16px 28px;
+    font-size: 16px;
+  }
+  
+  .call-again-button {
+    padding: 16px 28px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  .phone-input {
+    padding: 16px 18px;
+    font-size: 16px;
+  }
+  
+  .cant-talk-button {
+    padding: 16px 28px;
+    font-size: 16px;
+  }
+  
+  .cant-talk-link {
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  .spacer-for-buttons {
+    height: 260px;
+  }
+  
+  .money-elements span {
+    font-size: 20px;
+  }
+  
+  .ring-wave-1 {
+    width: 100px;
+    height: 100px;
+    top: -50px;
+    left: -50px;
+  }
+  
+  .ring-wave-2 {
+    width: 130px;
+    height: 130px;
+    top: -65px;
+    left: -65px;
+  }
+  
+  .ring-wave-3 {
+    width: 160px;
+    height: 160px;
+    top: -80px;
+    left: -80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .call-modal-container {
+    width: 450px;
+    height: 670px;
+    max-width: 98vw;
+  }
+  
+  .call-screen-one,
+  .call-screen-two {
+    padding: 10px 15px 15px;
+  }
+  
+  .call-title {
+    font-size: 22px;
+    line-height: 1.1;
+  }
+  
+  .call-description {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  
+  .call-subtitle {
+    font-size: 14px;
+    text-align: center;
+    color: #666;
+  }
+  
+  .call-description {
+    font-size: 15px;
+  }
+  
+  .call-now-button {
+    padding: 14px 24px;
+    font-size: 15px;
+  }
+  
+  .change-number-button {
+    padding: 14px 24px;
+    font-size: 15px;
+  }
+  
+  .call-again-button {
+    padding: 14px 24px;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  
+  .phone-input {
+    padding: 14px 16px;
+    font-size: 15px;
+  }
+  
+  .cant-talk-button {
+    padding: 14px 24px;
+    font-size: 15px;
+  }
+  
+  .cant-talk-link {
+    font-size: 13px;
+    text-align: center;
+  }
+  
+  .spacer-for-buttons {
+    height: 240px;
+  }
+  
+  .call-illustration,
+  .ringing-illustration {
+    width: 140px;
+    height: 200px;
+    margin-top: 80px;
+  }
+  
+  .house-icon1 {
+    font-size: 50px;
+  }
+  
+  .phone-icon {
+    font-size: 70px;
+  }
+}

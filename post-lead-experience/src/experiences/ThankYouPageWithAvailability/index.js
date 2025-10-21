@@ -28,7 +28,7 @@ const ThankYouPageWithAvailability = () => {
       <ThankYouContent />
       <TestimonialSection />
       <ClientTestimonials />
-      
+
       {/* Show appointment screen directly */}
       <AvailabilityScheduleModal 
         isOpen={showAppointment}

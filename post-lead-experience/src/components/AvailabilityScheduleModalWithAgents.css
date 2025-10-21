@@ -1,0 +1,769 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+/* AvailabilityScheduleModalWithAgents Styles */
+.agents-availability-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.agents-availability-modal-container {
+  background: white;
+  border-radius: 12px;
+  padding: 30px 40px 0 40px !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  max-width: 600px !important;
+  width: 100%;
+  height: 720px;
+  max-height: 720px;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* Close Button */
+.agents-close-button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #666;
+  cursor: pointer;
+  z-index: 10;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.agents-close-button:hover {
+  background-color: #f3f4f6;
+  color: #333;
+}
+
+/* Availability Schedule Modal Styles */
+.agents-availability-appointment-screen {
+  width: 100% !important;
+  font-family: 'Open Sans';
+}
+
+/* Modal Header */
+.agents-modal-header {
+  padding: 0 0 20px 0;
+}
+
+.agents-modal-title {
+  font-size: 22px;
+  font-weight: 600 !important;
+  color: #000000;
+  line-height: 1.3 !important;
+  margin: 0 !important;
+  text-align: left !important;
+}
+
+.agents-availability-appointment-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Profile Details Section Styles */
+.agents-profile-details-section {
+  margin-bottom: 24px;
+  padding: 0;
+  background-color: transparent;
+}
+
+.agents-profile-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.agents-profile-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.agents-profile-image {
+  margin-bottom: 8px;
+}
+
+.agents-profile-image img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #e5e7eb;
+}
+
+.agents-profile-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: center;
+}
+
+.agents-profile-content {
+  flex: 1;
+}
+
+.agents-profile-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 12px 0;
+  line-height: 1.3;
+  text-align: left;
+}
+
+.agents-star-icon {
+  font-size: 16px;
+  color: #FF8F00 !important;
+  transition: all 0.2s ease;
+}
+
+.agents-star-icon:hover {
+  color: #FF6F00;
+  transform: scale(1.1);
+}
+
+.agents-rating-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0ea5e9;
+}
+
+.agents-profile-description {
+  margin: 0;
+}
+
+.agents-profile-description ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.agents-profile-description li {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.5;
+  margin-bottom: 4px;
+  position: relative;
+  padding-left: 15px !important;
+  text-align: left !important;
+}
+
+.agents-profile-description li:before {
+  content: "•";
+  color: #9ca3af;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.agents-profile-description li:last-child {
+  margin-bottom: 0;
+}
+
+/* Availability Table */
+.agents-availability-table-container {
+  margin-top: -15px;
+  margin-bottom: 20px;
+  overflow-x: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+}
+
+.agents-availability-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.agents-availability-table thead {
+  background: #f9fafb;
+}
+
+.agents-availability-table th {
+  padding: 20px 20px;
+  text-align: left !important;
+  font-weight: 700 !important;
+  font-size: 15px !important;
+  border-bottom: 1px solid #e5e7eb;
+  color: #000000 !important;
+}
+
+.agents-availability-day-header {
+  text-align: center !important;
+}
+
+.agents-availability-table td {
+  padding: 8px 20px;
+  border-bottom: 0.1px solid #e5e7eb !important;
+  text-align: left !important;
+}
+
+.agents-availability-slot-label {
+  font-weight: 500 !important;
+  font-size: 14px;
+  text-align: left !important;
+}
+
+.agents-availability-checkbox-cell {
+  text-align: center;
+}
+
+/* Custom Checkbox */
+.agents-availability-custom-checkbox {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #d1d5db;
+  border-radius: 3px;
+  background: white;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.agents-availability-custom-checkbox:checked {
+  background: #0469BF;
+  border-color: #0469BF; 
+}
+
+.agents-availability-custom-checkbox:checked::after {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+/* Flexibility Toggle */
+.agents-availability-flexibility-toggle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.agents-availability-toggle-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+
+.agents-availability-toggle-input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.agents-availability-toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #d1d5db;
+  transition: 0.2s;
+  border-radius: 24px;
+}
+
+.agents-availability-toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.2s;
+  border-radius: 50%;
+}
+
+.agents-availability-toggle-input:checked + .agents-availability-toggle-slider {
+  background-color: #0469BF;
+}
+
+.agents-availability-toggle-input:checked + .agents-availability-toggle-slider:before {
+  transform: translateX(20px);
+}
+
+.agents-availability-toggle-text {
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  color: #000000;
+  font-family: inherit;
+}
+
+/* Instructions Input */
+.agents-availability-instructions-container {
+  margin-bottom: 24px;
+}
+
+.agents-availability-instructions-input {
+  width: 100%;
+  height: 60px;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  background: white;
+  box-sizing: border-box;
+}
+
+.agents-availability-instructions-input::placeholder {
+  color: #9ca3af;
+}
+
+.agents-availability-instructions-input:focus {
+  outline: none;
+  border-color: #0469BF;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Time Zone */
+.agents-availability-timezone-container {
+  margin-top: -10px;
+}
+
+.agents-availability-timezone-label {
+  text-align: left !important;
+  display: block;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  margin-bottom: 8px;
+  font-family: inherit;
+}
+
+.agents-availability-timezone-select-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.agents-availability-timezone-icon {
+  position: absolute;
+  left: 12px;
+  font-size: 16px;
+  z-index: 1;
+}
+
+.agents-availability-timezone-select {
+  width: 100%;
+  padding: 10px 12px 10px 36px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  background: white;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+  background-size: 14px;
+  cursor: pointer;
+}
+
+.agents-availability-timezone-select:focus {
+  outline: none;
+  border-color: #0469BF;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Button Styles */
+.agents-availability-confirmation-text {
+  font-size: 15px !important;
+  color: #6b7280;
+  font-family: inherit;
+  text-align: left;
+  margin: 0;
+}
+
+.agents-availability-continue-appointment {
+  width: 100%;
+  background: linear-gradient(135deg, #FFC107, #FF8F00);
+  color: black;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 16px;
+  margin-bottom: 10px;
+}
+
+.agents-availability-continue-appointment:hover {
+  background: linear-gradient(135deg, #FF8F00, #FF6F00);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .agents-availability-modal-overlay {
+    padding: 10px;
+  }
+
+  .agents-close-button {
+    top: 10px;
+    right: 15px;
+  }
+  
+  .agents-availability-modal-container {
+    padding: 25px 25px 0 25px !important;
+    height: 80vh;
+    max-height: 80vh;
+    border-radius: 8px;
+  }
+  
+  .agents-availability-appointment-screen {
+    padding: 0;
+  }
+  
+  .agents-availability-appointment-container {
+    padding: 0;
+  }
+  
+  /* Modal Header Mobile */
+  .agents-modal-header {
+    padding: 16px 20px 12px 20px;
+  }
+  
+  .agents-modal-title {
+    font-size: 20px;
+  }
+  
+  /* Modal Content Mobile */
+  .agents-modal-content {
+    padding: 0 20px;
+  }
+
+  /* Profile Details Mobile */
+  .agents-profile-details-section {
+    margin-bottom: 20px;
+    padding: 0;
+  }
+
+  .agents-profile-info {
+    gap: 12px;
+  }
+
+  .agents-profile-image img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .agents-profile-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #000000;
+  }
+
+  .agents-profile-description li {
+    font-size: 13px;
+  }
+
+  .agents-star-icon {
+    font-size: 14px;
+  }
+
+  .agents-rating-text {
+    font-size: 13px;
+  }
+  
+  /* Availability Table Mobile */
+  .agents-availability-table-container {
+    margin-top: -10px;
+    margin-bottom: 16px;
+    border-radius: 6px;
+  }
+  
+  .agents-availability-table {
+    font-size: 12px;
+  }
+  
+  .agents-availability-table th {
+    padding: 10px 20px;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+  }
+  
+  .agents-availability-table td {
+    padding: 10px 8px;
+  }
+  
+  .agents-availability-slot-label {
+    font-size: 12px !important;
+    font-weight: 500 !important;
+  }
+  
+  .agents-availability-custom-checkbox {
+    width: 16px;
+    height: 16px;
+  }
+  
+  /* Flexibility Toggle Mobile */
+  .agents-availability-flexibility-toggle {
+    margin-bottom: 12px;
+    gap: 10px;
+  }
+  
+  .agents-availability-toggle-text {
+    font-size: 14px !important;
+    font-weight: 500 !important;
+  }
+
+  .agents-availability-toggle-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+  }
+
+  .agents-availability-toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.2s;
+    border-radius: 50%;
+  }
+  
+  /* Instructions Input Mobile */
+  .agents-availability-instructions-container {
+    margin-bottom: 16px;
+  }
+  
+  .agents-availability-instructions-input {
+    height: 50px;
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+  
+  /* Timezone Mobile */
+  .agents-availability-timezone-container {
+    margin-top: -10px;
+    margin-bottom: 12px;
+  }
+  
+  .agents-availability-timezone-label {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    margin-bottom: 6px;
+  }
+  
+  .agents-availability-timezone-select {
+    font-size: 13px;
+    padding: 10px 35px !important;
+    height: 44px;
+  }
+  
+  .agents-availability-timezone-icon {
+    font-size: 14px;
+  }
+  
+  .agents-availability-timezone-select-wrapper {
+    position: relative;
+  }
+  
+  /* Modal Footer Mobile */
+  .agents-modal-footer {
+    padding: 16px 20px 20px 20px;
+  }
+  
+  .agents-availability-continue-appointment {
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    padding: 10px 16px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .agents-availability-confirmation-text {
+    font-size: 13px !important;
+    margin: 0;
+  }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+  .agents-availability-modal-overlay {
+    padding: 5px;
+  }
+
+  .agents-close-button {
+    top: 10px;
+    right: 15px;
+  }
+  
+  .agents-availability-modal-container {
+    padding: 20px 20px 0 20px !important;
+    height: 85vh;
+    max-height: 85vh;
+  }
+  
+  .agents-modal-header {
+    padding: 12px 16px 10px 16px;
+  }
+  
+  .agents-modal-title {
+    font-size: 18px;
+  }
+  
+  .agents-modal-content {
+    padding: 0 10px;
+  }
+
+  /* Profile Details Small Mobile */
+  .agents-profile-details-section {
+    margin-bottom: 16px;
+  }
+
+  .agents-profile-info {
+    gap: 10px;
+  }
+
+  .agents-profile-image img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .agents-profile-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 8px;
+  }
+
+  .agents-profile-description li {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .agents-star-icon {
+    font-size: 12px;
+  }
+
+  .agents-rating-text {
+    font-size: 12px;
+  }
+  
+  .agents-availability-table th {
+    padding: 10px 6px;
+    font-size: 12px !important;
+  }
+  
+  .agents-availability-table td {
+    padding: 10px 8px;
+  }
+  
+  .agents-availability-slot-label {
+    font-size: 11px !important;
+  }
+  
+  .agents-availability-custom-checkbox {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .agents-availability-toggle-text {
+    font-size: 12px !important;
+  }
+  
+  .agents-availability-instructions-input {
+    height: 45px;
+    font-size: 12px;
+  }
+  
+  .agents-availability-timezone-container {
+    margin-top: -12px;
+    margin-bottom: 10px;
+  }
+  
+  .agents-availability-timezone-label {
+    font-size: 13px !important;
+  }
+  
+  .agents-availability-timezone-select {
+    font-size: 12px;
+    padding: 8px 10px;
+    height: 40px;
+  }
+  
+  .agents-modal-footer {
+    padding: 12px 16px 16px 16px;
+  }
+  
+  .agents-availability-continue-appointment {
+    font-size: 12px !important;
+    padding: 9px 14px;
+    margin-top: 14px;
+    margin-bottom: 14px;
+  }
+  
+  .agents-availability-confirmation-text {
+    font-size: 12px !important;
+    margin: 0;
+  }
+}
+
+/* Extra Small Mobile Devices */
+@media (max-width: 360px) {
+  .agents-profile-info {
+    gap: 8px;
+  }
+
+  .agents-profile-image img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .agents-profile-name {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .agents-profile-description li {
+    font-size: 11px;
+  }
+
+  .agents-star-icon {
+    font-size: 11px;
+  }
+
+  .agents-rating-text {
+    font-size: 11px;
+  }
+}

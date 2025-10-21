@@ -37,6 +37,15 @@ const getUrlParams = () => {
 let trackingData = {
     appointment_type: "phone_call", // Default to phone
     appointment_details: "",
+    button_clicked: "", // Track which button was clicked
+    agent_info: {
+        agent_name: "",
+        agent_phone: "",
+        zip_code: ""
+    },
+    n8n_flow_triggered: "No",
+    n8n_api_res: "",
+    n8n_msg_received: "No"
 };
 
 // Set consultation type
@@ -47,6 +56,35 @@ export const trackConsultationSelection = (type) => {
 // Set appointment details
 export const trackAppointmentDetails = (details) => {
     trackingData.appointment_details = details;
+};
+
+// Track button click
+export const trackButtonClick = (buttonType) => {
+    trackingData.button_clicked = buttonType;
+};
+
+// Set agent info
+export const trackAgentInfo = (agentName, agentPhone, zipCode) => {
+    trackingData.agent_info = {
+        agent_name: agentName || "",
+        agent_phone: agentPhone || "",
+        zip_code: zipCode || ""
+    };
+};
+
+// Set n8n flow triggered status
+export const trackN8nFlowTriggered = (status) => {
+    trackingData.n8n_flow_triggered = status; // "Yes" or "No"
+};
+
+// Set n8n API response
+export const trackN8nApiResponse = (response) => {
+    trackingData.n8n_api_res = response;
+};
+
+// Set n8n message received status
+export const trackN8nMsgReceived = (status) => {
+    trackingData.n8n_msg_received = status; // "Yes" or "No"
 };
 
 // Get appointment details object
@@ -67,6 +105,13 @@ export const getSegmentData = () => {
     return {
         appointment_type: trackingData.appointment_type, // Direct values: 'home', 'phone', 'video'
         appointment_details: getAppointmentDetailsObject(),
+        button_clicked: trackingData.button_clicked || "", // Track button clicks
+        // Agent info (includes zip_code)
+        agent_info: trackingData.agent_info,
+        // n8n properties
+        n8n_flow_triggered: trackingData.n8n_flow_triggered,
+        n8n_api_res: trackingData.n8n_api_res,
+        n8n_msg_received: trackingData.n8n_msg_received,
         // Quiz properties (from URL)
         quiz_name: urlParams.quiz_name || "",
         quiz_email: urlParams.quiz_email || "",
