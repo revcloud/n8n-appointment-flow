@@ -18,7 +18,7 @@ const AGENT_DATA = {
   noeCruz: {
     name: "Noe Cruz",
     fullName: "Noe Cruz",
-    phone: "569-916-8617",
+    phone: "559-916-8617",
     image: "https://palisade-api-connectors.s3.us-west-2.amazonaws.com/appointment/ab44f1d116e6d0741a721e2367b562cd-h_l.jpg",
     zipCodes: [
       "93611", "93650", "93701", "93702", "93703", "93704", "93705", "93706",

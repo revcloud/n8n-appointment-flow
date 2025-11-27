@@ -18,7 +18,7 @@ const slots = [
   { key: "evening", label: "Evening (6pm-9pm)" },
 ];
 
-const AvailabilityScheduleModalWithAgents = ({ isOpen, onClose, onConfirm }) => {
+const AvailabilityScheduleModalWithAgentsV1 = ({ isOpen, onClose, onConfirm }) => {
   const [selected, setSelected] = useState({
     weekdays: {},
     saturday: {},
@@ -28,6 +28,7 @@ const AvailabilityScheduleModalWithAgents = ({ isOpen, onClose, onConfirm }) => 
   const [timezone, setTimezone] = useState("America/Los_Angeles");
   const [message, setMessage] = useState("");
   const [agentData, setAgentData] = useState(null);
+  const [zipCode, setZipCode] = useState("");
 
   // Track appointment details when modal opens and prevent background scrolling
   React.useEffect(() => {
@@ -41,11 +42,13 @@ const AvailabilityScheduleModalWithAgents = ({ isOpen, onClose, onConfirm }) => 
       const quizAddress = urlParams.get('quiz_address');
       const prepopAddress = urlParams.get('prepop_address');
       
-      let zipCode = "";
+      let zip_code = "";
       if (quizAddress) {
-        zipCode = extractZipFromAddress(quizAddress) || "";
+        zip_code = extractZipFromAddress(quizAddress) || "";
+        setZipCode(zip_code)
       } else if (prepopAddress) {
-        zipCode = extractZipFromAddress(prepopAddress) || "";
+        zip_code = extractZipFromAddress(prepopAddress) || "";
+        setZipCode(zip_code)
       }
       
       // Set appointment type to empty string for this experience
@@ -53,7 +56,7 @@ const AvailabilityScheduleModalWithAgents = ({ isOpen, onClose, onConfirm }) => 
       trackAppointmentDetails('');
       
       // Track agent info with zip_code
-      trackAgentInfo(agent?.name || "", agent?.phone || "", zipCode);
+      trackAgentInfo(agent?.name || "", agent?.phone || "", zip_code);
       
       // Prevent background scrolling
       document.body.style.overflow = 'hidden';
@@ -187,9 +190,14 @@ const AvailabilityScheduleModalWithAgents = ({ isOpen, onClose, onConfirm }) => 
         agent_phone: agentData?.phone || '',
         phone: formatPhoneNumber(urlParams.get('quiz_phone') || urlParams.get('prepop_phone')),
         name: urlParams.get('quiz_name') || urlParams.get('prepop_name') || '',
-        is_flexible: isFlexible,
+        email: urlParams.get('quiz_email') || urlParams.get('prepop_email') || '',
+        is_flexible: true,
         message: message || "",
-        availability: convertAvailability()
+        availability: convertAvailability(),
+        zip_code: zipCode || "",
+        address_line_1: urlParams.get('quiz_address') || urlParams.get('prepop_address') || '',
+        beds:urlParams.get('bedsCount') || '',
+        baths:urlParams.get('bathsCount') || '',
       };
 
       const response = await fetch('https://alyson123.app.n8n.cloud/webhook/e04b7f3b-e1aa-4389-b386-4572c9e3a13f', {
@@ -305,7 +313,7 @@ const AvailabilityScheduleModalWithAgents = ({ isOpen, onClose, onConfirm }) => 
               </div>
 
               {/* Flexibility Toggle */}
-              <div className="agents-availability-flexibility-toggle">
+              {/* <div className="agents-availability-flexibility-toggle">
                 <label className="agents-availability-toggle-wrapper">
                   <input
                     type="checkbox"
@@ -316,7 +324,7 @@ const AvailabilityScheduleModalWithAgents = ({ isOpen, onClose, onConfirm }) => 
                   <span className="agents-availability-toggle-slider"></span>
                 </label>
                 <span className="agents-availability-toggle-text">I'm flexible — reach out anytime</span>
-              </div>
+              </div> */}
 
               {/* Special Instructions */}
               <div className="agents-availability-instructions-container">
@@ -372,4 +380,4 @@ const AvailabilityScheduleModalWithAgents = ({ isOpen, onClose, onConfirm }) => 
   );
 };
 
-export default AvailabilityScheduleModalWithAgents;
+export default AvailabilityScheduleModalWithAgentsV1;

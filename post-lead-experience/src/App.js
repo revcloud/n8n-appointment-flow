@@ -6,12 +6,13 @@ import ThankYouPageWithAvailability from './experiences/ThankYouPageWithAvailabi
 import ThankYouPageCallMeNow from './experiences/ThankYouPageCallMeNow';
 import ThankYouPageWithAgents from './experiences/ThankYouPageWithAgents';
 import ThankYouPageWithBbys from './experiences/ThankYouPageWithBbys';
+import ThankYouPageWithAgentsV1 from "./experiences/ThankYouPageWithAgentsV1"
 import { getAgentByZipCode, extractZipFromAddress } from './utils/agentManager';
 
 function App() {
   // Get experience ID from URL parameters or default to 5
   const urlParams = new URLSearchParams(window.location.search);
-  let experienceId = urlParams.get('plid') || 5;
+  let experienceId = urlParams.get('plid') || 7;
 
   // Check ZIP code to determine if user should be redirected to ThankYouPageWithAvailability
   const checkZipCodeAndRedirect = () => {
@@ -49,7 +50,7 @@ function App() {
     }
     
     // If ZIP code matches a specific agent (Robert H., Greenwood Village, Fresno), use ThankYouPageWithAgents (case 5)
-    return 5;
+    return 7;
   };
 
   // Override experienceId based on ZIP code logic
@@ -57,6 +58,13 @@ function App() {
   
   // Render component based on experienceId using switch case
   switch (experienceId) {
+    case 7:
+    case '7':
+      return (
+        <div className="App">
+          <ThankYouPageWithAgentsV1 />
+        </div>
+      );
     case 6:
     case '6':
       return (
