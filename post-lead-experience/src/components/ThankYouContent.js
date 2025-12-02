@@ -12,14 +12,14 @@ const ThankYouContent = () => {
         <div className="content-body">
        <p className="intro-paragraph">
   <span className="drop-cap">T</span>
-  rusted Home Offers is now reaching out to their network of hundreds of qualified cash buyers and investors 
+  rusted Home Reports is now reaching out to their network of hundreds of qualified cash buyers and investors 
   to get you top offer on your home. They have helped thousands of homeowners who've felt this is the best way 
   to sell their home quickly, and stress free.
 </p>
 
           <div className="benefits-section">
             <h2 className="benefits-heading">
-              Benefits of working with Trusted Home Offers:
+              Benefits of working with Trusted Home Reports:
             </h2>
             <ul className="benefit-list">
               <li>Tap the largest cash buyer network in the US, including iBuyers and long-term investors.</li>
@@ -136,7 +136,7 @@ const ThankYouContent = () => {
 
           <div className="numbered-section">
             <h3 className="numbered-heading">
-              1. Trusted Home Offers will match you with instant home buyers in your area.
+              1. Trusted Home Reports will match you with instant home buyers in your area.
             </h3>
 
             <p className="numbered-paragraph">
@@ -154,7 +154,7 @@ const ThankYouContent = () => {
               Depending on your home’s condition, price point, and location, your home will be a more desirable purchase to certain cash buyers over others. Most real estate buyers have a specific “buy box” they use with parameters as to which types of properties are most valuable to them. That means what your home is “worth” will vary, even among buyers who can pay instantly.
             </p>
             <p className="numbered-paragraph">
-              Trusted Home Offers has created the largest iBuyer network in the U.S. so you don’t have to spend hours searching for the right investor. Just fill out some information about your home and location and we’ll determine which iBuyer is the best match for you based on their past transaction history, target price range, and the types of property they’re historically willing to purchase.
+              Trusted Home Reports has created the largest iBuyer network in the U.S. so you don’t have to spend hours searching for the right investor. Just fill out some information about your home and location and we’ll determine which iBuyer is the best match for you based on their past transaction history, target price range, and the types of property they’re historically willing to purchase.
             </p>
             <p className="numbered-paragraph">
               From there, you can compare what you’d get for your house by selling to an iBuyer against an estimate of what your house would go for on the open market with the help of a top agent.
@@ -254,7 +254,7 @@ const ThankYouContent = () => {
              You might even try offering a lease-to-own option to tenants.
             </p>
             <p className="numbered-paragraph">
-            You could also partner up with a top real estate agent in your area who has a good track record for selling homes quickly — if you decide to go this route, Trusted Home Offers can help pair you with an agent with a low average DOM, or “days on market,” indicating they’ve got experience finding a buyer quickly.
+            You could also partner up with a top real estate agent in your area who has a good track record for selling homes quickly — if you decide to go this route, Trusted Home Reports can help pair you with an agent with a low average DOM, or “days on market,” indicating they’ve got experience finding a buyer quickly.
             </p>
           </div>
 
@@ -272,7 +272,7 @@ const ThankYouContent = () => {
              Beware. Keep an eye on your credit history to make sure no one has taken out a second mortgage on your home. Be hesitant about any company that charges an application fee upfront. Shady businesses can take your equity and walk away, leaving you in a more desperate position than you were when you started looking into a cash option.
             </p>
             <p className="numbered-paragraph">
-           If you don’t have the time or energy to exercise vigilance, you’d be better off going through Trusted Home Offers’s since every iBuyer in our network must go through a stringent vetting process.
+           If you don’t have the time or energy to exercise vigilance, you’d be better off going through Trusted Home Reports’s since every iBuyer in our network must go through a stringent vetting process.
             </p>
           </div>
 
@@ -300,7 +300,7 @@ const ThankYouContent = () => {
             </h3>
 
             <p className="numbered-paragraph">
-             If you need to sell your house fast, Trusted Home Offers will match you with the right iBuyer for your particular needs, depending on factors like your home’s price range and condition, through our platform.
+             If you need to sell your house fast, Trusted Home Reports will match you with the right iBuyer for your particular needs, depending on factors like your home’s price range and condition, through our platform.
             </p>
 
           </div>
