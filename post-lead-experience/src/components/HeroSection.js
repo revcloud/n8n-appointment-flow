@@ -8,15 +8,15 @@ const HeroSection = () => {
       <div className="hero-image-container">
         <img
           src={thankYouImage}
-          alt="Trusted Home Reports - Cash for Houses"
+          alt="Liberty Home Report - Cash for Houses"
           className="hero-image"
         />
       </div>
       <div className="hero-content">
         <div className="hero-brand">
           <img
-            src="https://try.trustedhomereports.com/assets/trusted-home-reports-logo-white.png"
-            alt="Trusted Home Reports Logo"
+            src="https://try.libertyhomereport.com/assets/logo_white.png"
+            alt="Liberty Home Report Logo"
             className="hero-logo"
           />
         </div>
