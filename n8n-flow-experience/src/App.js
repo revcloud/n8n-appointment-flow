@@ -9,7 +9,7 @@ function App() {
 
   const checkZipCodeAndRedirect = () => {
     let zipCode = null;
-    const address = urlParams.get('quiz_address');
+    const address = urlParams.get('quiz_address') || urlParams.get('prepop_address');
     if (address) {
       zipCode = extractZipFromAddress(address);
     }
