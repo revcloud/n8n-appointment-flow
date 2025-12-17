@@ -1,0 +1,721 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+/* AvailabilityScheduleModal Styles */
+.availability-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  /* padding: 20px; */
+}
+
+.availability-modal-container {
+  background: white;
+  border-radius: 12px;
+  padding: 26px 26px 0 26px !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  max-width: 600px !important;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* Close Button */
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #666;
+  cursor: pointer;
+  z-index: 10;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.close-button:hover {
+  background-color: #f3f4f6;
+  color: #333;
+}
+
+/* Availability Schedule Modal Styles - Exact Match to Image */
+.availability-appointment-screen {
+  width: 100% !important;
+  font-family: 'Open Sans';
+}
+
+.availability-appointment-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Modal Header Desktop */
+.modal-header {
+  padding: 0 0 20px 0;
+  margin-bottom: 0;
+}
+
+.modal-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #000000;
+  line-height: 1.3;
+  margin: 0 0 12px 0;
+  text-align: left;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.modal-description {
+  font-size: 15px;
+  color: #374151;
+  line-height: 1.5;
+  margin: 0;
+  text-align: left;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.modal-content {
+  padding: 0;
+}
+
+.modal-footer {
+  padding: 20px 0 24px 0;
+  margin-top: 0;
+}
+
+/* Privacy Shield */
+.availability-privacy-shield {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+/* Back Button */
+.availability-appointment-back {
+  margin-bottom: 16px;
+}
+
+.availability-back-button {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #374151;
+  font-family: inherit;
+  padding: 0;
+}
+
+.availability-back-arrow {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.availability-privacy-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #fbbf24;
+  background: #fbbf24;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.availability-avatar-placeholder {
+  font-size: 10px;
+  color: white;
+}
+
+.availability-privacy-badge {
+ align-content: center !important;
+  color: white !important;
+  width: 180px !important;
+  height: 32px !important;
+  margin-left: 11px !important;
+  background-color: #592ff3 !important;
+  border-color: #592ff3 !important;
+  font-weight: 500 !important;
+  border-radius: 6px !important;
+  font-size: 14px !important;
+}
+
+/* Availability Table */
+.availability-table-container {
+  margin-top: -15px;
+  margin-bottom: 20px;
+  overflow-x: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+}
+
+.availability-table {
+  width: 100%;
+  border-collapse: collapse;
+  /* border: 1px solid #e5e7eb; */
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.availability-table thead {
+  background: #f9fafb;
+}
+
+.availability-table th {
+  padding: 20px 20px;
+  text-align: left !important;
+  font-weight: 700 !important;
+  /* color: #374151; */
+  font-size: 15px !important;
+  border-bottom: 1px solid #e5e7eb;
+  color: #000000 !important;
+}
+
+.availability-day-header {
+  text-align: center !important;
+}
+
+.availability-table td {
+  padding: 10px 14px;
+  border-bottom: 0.1px solid #e5e7eb !important;
+  text-align: left !important;
+}
+
+.availability-slot-label {
+  font-weight: 500 !important;
+  /* color: #374151; */
+  font-size: 14px;
+  text-align: left !important;
+}
+
+.availability-checkbox-cell {
+  text-align: center;
+}
+
+/* Custom Checkbox */
+.availability-custom-checkbox {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #d1d5db;
+  border-radius: 3px;
+  background: white;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.availability-custom-checkbox:checked {
+  background: #0469BF;
+  border-color: #0469BF; 
+}
+
+.availability-custom-checkbox:checked::after {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+/* Flexibility Toggle */
+.availability-flexibility-toggle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.availability-toggle-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+
+.availability-toggle-input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.availability-toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #d1d5db;
+  transition: 0.2s;
+  border-radius: 24px;
+}
+
+.availability-toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.2s;
+  border-radius: 50%;
+}
+
+.availability-toggle-input:checked + .availability-toggle-slider {
+  background-color: #0469BF;
+}
+
+.availability-toggle-input:checked + .availability-toggle-slider:before {
+  transform: translateX(20px);
+}
+
+.availability-toggle-text {
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  color: #000000;
+  font-family: inherit;
+}
+
+/* Instructions Input */
+.availability-instructions-container {
+  margin-bottom: 24px;
+}
+
+.availability-instructions-input {
+  width: 100%;
+  height: 60px;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  background: white;
+  /* color: #374151; */
+  box-sizing: border-box;
+}
+
+.availability-instructions-input::placeholder {
+  color: #9ca3af;
+}
+
+.availability-instructions-input:focus {
+  outline: none;
+  border-color: #0469BF;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Time Zone */
+.availability-timezone-container {
+  margin-top: -10px;
+  /* margin-bottom: 12px; */
+}
+
+.availability-timezone-label {
+  text-align: left !important;
+  display: block;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  /* color: #374151; */
+  margin-bottom: 8px;
+  font-family: inherit;
+}
+
+.availability-timezone-select-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.availability-timezone-icon {
+  position: absolute;
+  left: 12px;
+  font-size: 16px;
+  z-index: 1;
+}
+
+.availability-timezone-select {
+  width: 100%;
+  padding: 10px 12px 10px 36px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  background: white;
+  /* color: #374151; */
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+  background-size: 14px;
+  cursor: pointer;
+}
+
+.availability-timezone-select:focus {
+  outline: none;
+  border-color: #0469BF;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Use same button styles as OfferModal */
+.availability-confirmation-text {
+  font-size: 15px !important;
+  color: #6b7280;
+  font-family: inherit;
+  text-align: center;
+  margin-top: 8px;
+  text-align: left;
+}
+
+.availability-continue-appointment {
+  width: 100%;
+  background-color: #f97316;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 20px;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-family: inherit;
+  margin-top: -30px;
+}
+
+.availability-continue-appointment:hover {
+  background-color: #ea580c;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .availability-modal-overlay {
+    padding: 10px;
+  }
+
+  .close-button {
+
+  top: 10px;
+  right: 15px;
+
+}
+  
+  .availability-modal-container {
+    padding: 18px 10px 0 10px !important;
+    max-height: 95vh;
+    border-radius: 8px;
+  }
+  
+  .availability-appointment-screen {
+    padding: 0;
+  }
+  
+  .availability-appointment-container {
+    padding: 0;
+  }
+  
+  /* Modal Header Mobile */
+  .modal-header {
+    padding: 16px 20px 12px 20px;
+  }
+  
+  .modal-title {
+    font-size: 18px !important;
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+  
+  .modal-description {
+    font-size: 13px !important;
+    line-height: 1.4;
+  }
+  
+  .availability-appointment-back {
+    margin-bottom: 12px;
+    margin-top: -20px;
+  }
+  
+  .availability-back-button {
+    font-size: 14px !important;
+    padding: 8px 0px !important;
+  }
+  
+  .availability-back-arrow {
+    font-size: 14px !important;
+  }
+  
+  /* Modal Content Mobile */
+  .modal-content {
+    padding: 0 20px;
+  }
+  
+  /* Availability Table Mobile */
+  .availability-table-container {
+    margin-top: -10px;
+    margin-bottom: 16px;
+    border-radius: 6px;
+  }
+  
+  .availability-table {
+    font-size: 12px;
+  }
+  
+  .availability-table th {
+    padding: 12px 12px;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+  }
+  
+  .availability-table td {
+    padding: 10px 8px;
+  }
+  
+  .availability-slot-label {
+    font-size: 12px !important;
+    font-weight: 500 !important;
+  }
+  
+  .availability-custom-checkbox {
+    width: 16px;
+    height: 16px;
+  }
+  
+  /* Flexibility Toggle Mobile */
+  .availability-flexibility-toggle {
+    margin-bottom: 12px;
+    gap: 10px;
+  }
+  
+  .availability-toggle-text {
+    font-size: 14px !important;
+    font-weight: 500 !important;
+  }
+
+  .availability-toggle-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.availability-toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.2s;
+  border-radius: 50%;
+
+}
+
+  
+  
+  /* Instructions Input Mobile */
+  .availability-instructions-container {
+    margin-bottom: 16px;
+  }
+  
+  .availability-instructions-input {
+    height: 50px;
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+  
+  /* Timezone Mobile */
+  .availability-timezone-container {
+    margin-top: -5px;
+    margin-bottom: 16px;
+  }
+  
+  .availability-timezone-label {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    margin-bottom: 6px;
+  }
+  
+  .availability-timezone-select {
+    font-size: 13px;
+    padding: 10px 35px !important;
+    height: 44px;
+  }
+  
+  .availability-timezone-icon {
+    font-size: 14px;
+  }
+  
+  .availability-timezone-select-wrapper {
+    position: relative;
+  }
+  
+  /* Modal Footer Mobile */
+  .modal-footer {
+    padding: 16px 20px 20px 20px;
+  }
+  
+  .availability-continue-appointment {
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    padding: 10px 16px;
+    margin-top: -20px;
+  }
+  
+  .availability-confirmation-text {
+    font-size: 13px !important;
+    margin-top: 6px;
+  }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+  .availability-modal-overlay {
+    padding: 5px;
+  }
+
+   .close-button {
+
+  top: 10px;
+  right: 15px;
+
+}
+  
+  .availability-modal-container {
+    padding: 16px 5px 0 5px !important;
+    max-height: 98vh;
+  }
+  
+  .modal-header {
+    padding: 12px 16px 10px 16px;
+  }
+  
+  .modal-title {
+    font-size: 16px !important;
+  }
+  
+  .modal-description {
+    font-size: 12px !important;
+  }
+  
+  .modal-content {
+    padding: 0 16px;
+  }
+  
+  .availability-table th {
+    padding: 10px 9px;
+    font-size: 12px !important;
+  }
+  
+  .availability-table td {
+    padding: 10px 8px;
+  }
+  
+  .availability-slot-label {
+    font-size: 11px !important;
+  }
+  
+  .availability-custom-checkbox {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .availability-toggle-text {
+    font-size: 12px !important;
+  }
+  
+  
+  .availability-instructions-input {
+    height: 45px;
+    font-size: 12px;
+  }
+  
+  .availability-timezone-label {
+    font-size: 13px !important;
+  }
+  
+  .availability-timezone-select {
+    font-size: 12px;
+    padding: 8px 10px;
+    height: 40px;
+  }
+  
+  .modal-footer {
+    padding: 12px 16px 16px 16px;
+  }
+  
+  .availability-continue-appointment {
+    font-size: 12px !important;
+    padding: 9px 14px;
+  }
+  
+  .availability-confirmation-text {
+    font-size: 12px !important;
+  }
+}
+
+/* Large Mobile Devices */
+@media (min-width: 481px) and (max-width: 768px) {
+  .modal-title {
+    font-size: 19px !important;
+  }
+  
+  .modal-description {
+    font-size: 14px !important;
+  }
+  
+  .availability-table th {
+    font-size: 13px !important;
+  }
+  
+  .availability-slot-label {
+    font-size: 13px !important;
+  }
+  
+  .availability-toggle-text {
+    font-size: 15px !important;
+  }
+  
+  .availability-instructions-input {
+    font-size: 14px;
+  }
+  
+  .availability-timezone-label {
+    font-size: 15px !important;
+  }
+  
+  .availability-timezone-select {
+    font-size: 14px;
+  }
+  
+  .availability-continue-appointment {
+    font-size: 14px !important;
+  }
+  
+  .availability-confirmation-text {
+    font-size: 14px !important;
+  }
+}
