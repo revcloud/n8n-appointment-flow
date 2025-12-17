@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './AgentDetailsModal.css';
 import { getCurrentAgent, extractZipFromAddress } from '../utils/agentManager';
-import { sendResendMessageAPI } from '../api/connectStreams';
+import { sendResendMessageAPI } from '../api/n8nWebflow';
 
 const AgentDetailsModal = ({ isOpen, onClose, onBack, appointmentData }) => {
   const [currentScreen, setCurrentScreen] = useState('received-text');
